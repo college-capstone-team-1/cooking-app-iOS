@@ -60,17 +60,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myU-eS-SlR" userLabel="Search">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGH-xh-doQ">
-                                        <rect key="frame" x="147" y="2" width="121" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGH-xh-doQ">
+                                        <rect key="frame" x="341" y="2" width="65" height="46"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="e3n-pk-nzn"/>
+                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="Search">
+                                                <fragment content="검색">
                                                     <attributes>
-                                                        <font key="NSFont" size="24" name="AppleMyungjo"/>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="13" name="AppleMyungjo"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -80,10 +83,23 @@
                                             <action selector="searchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WU6-pV-Usb"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8hX-QH-mUX">
+                                        <rect key="frame" x="8" y="8" width="325" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="AGH-xh-doQ" firstAttribute="leading" secondItem="8hX-QH-mUX" secondAttribute="trailing" constant="8" id="1Na-da-1kC"/>
+                                    <constraint firstItem="8hX-QH-mUX" firstAttribute="leading" secondItem="myU-eS-SlR" secondAttribute="leading" constant="8" id="Fw9-5X-j8U"/>
                                     <constraint firstAttribute="height" constant="50" id="Mzy-Gy-EYP"/>
+                                    <constraint firstAttribute="bottom" secondItem="8hX-QH-mUX" secondAttribute="bottom" constant="8" id="XPN-gK-4kj"/>
+                                    <constraint firstItem="AGH-xh-doQ" firstAttribute="top" secondItem="myU-eS-SlR" secondAttribute="top" constant="2" id="Xa6-dT-yUV"/>
+                                    <constraint firstAttribute="trailing" secondItem="AGH-xh-doQ" secondAttribute="trailing" constant="8" id="Zf6-A7-XWd"/>
+                                    <constraint firstAttribute="bottom" secondItem="AGH-xh-doQ" secondAttribute="bottom" constant="2" id="vuw-WZ-p92"/>
+                                    <constraint firstItem="8hX-QH-mUX" firstAttribute="top" secondItem="myU-eS-SlR" secondAttribute="top" constant="8" id="xee-qx-gx0"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -108,11 +124,12 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="mainTableView" destination="Uiv-uC-7w7" id="OCm-s6-VRG"/>
+                        <outlet property="searchField" destination="8hX-QH-mUX" id="jBR-PO-PNb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="23"/>
+            <point key="canvasLocation" x="1008.6956521739131" y="22.767857142857142"/>
         </scene>
         <!--Favorite Recipes-->
         <scene sceneID="NfS-XV-wBK">
@@ -173,6 +190,9 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

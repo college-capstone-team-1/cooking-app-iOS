@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSource {
     
     
+    @IBOutlet var searchField: UITextField!
     @IBOutlet weak var mainTableView: UITableView!
     
     struct RCP:Codable{
@@ -88,37 +89,55 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     var startIndex:Int = 1
     var endIndex:Int = 5
     private var currentPage = 1
+    var keyword:String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         mainTableView.delegate = self
         mainTableView.dataSource = self
         
-        //getRecipeData(Ingredients: "미역")
+        
+        //검색바 돋보기이미지 생성 및 배치
+
+        let imageView = UIImageView(frame: CGRect(x: 5, y: 2, width: 25, height: 25))
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "ic_search.png")
+        
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 30 , height: 30))
+        leftView.addSubview(imageView)
+ 
+        searchField.leftView = leftView
+        searchField.leftViewMode = .always
+        
     }
-    
+
     @IBAction func searchBtn(_ sender: Any) {
-        getRecipeData()
-    }
-    
-    @IBAction func leftBtn(_ sender: UIButton) {
-        if startIndex>5 {
-            startIndex -= 5
-            endIndex -= 5
-            print("st: \(startIndex) end: \(endIndex)")
+        
+        //텍스트를 입력한 경우 검색 키워드 저장
+        if let search = searchField.text, search != "" {
+            print("not nil")
+            self.keyword = search
         }
-        getRecipeData(startIndex: startIndex, endIndex: endIndex)
+        //검색하지 않은 경우 검색 키워드를 비움
+        else{
+            self.keyword = nil
+        }
+        
+        //테이블뷰 cell이 생성되었을 때 테이블뷰를 최상단으로 이동
+        if self.recipeData != nil {
+            let indexPath = IndexPath(row: 0, section: 0)
+            mainTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        }
+        
+        self.recipeData = nil
+        getRecipeData(Ingredients: keyword)
+        
+       
+        
+        
     }
     
-    @IBAction func rightBtn(_ sender: UIButton) {
-        //total count를 넘지 않도록 수정하기
-        startIndex += 5
-        endIndex += 5
-        print("st: \(startIndex) end: \(endIndex)")
-        getRecipeData(startIndex: startIndex, endIndex: endIndex)
-    }
-    
-    
+ 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.recipeData?.COOKRCP01.row.count ?? 0  //페이지당 5개
@@ -207,9 +226,10 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
 
                 
             }catch{
+                
                 print("Can not load recipe Data, check the error msg")
                 print(error)
-                
+                self.showToast(message: "검색결과가 없습니다")
             }
 
         }
@@ -223,10 +243,33 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         //API Start인덱스는 1부터 시작함
         if indexPath.row + 2 == currentPage {
             
-            getRecipeData(startIndex: currentPage, endIndex: currentPage + 4)
+            getRecipeData(Ingredients:keyword, startIndex: currentPage, endIndex: currentPage + 4)
         }
     }
     
+    func showToast(message : String, font: UIFont = UIFont.systemFont(ofSize: 14.0)) {
+        
+        //let width = message.count * 15
+        
+        //UIlabel뷰 생성
+        DispatchQueue.main.async {
+            let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-150, width: 150, height: 30))
+            toastLabel.text = message
+            toastLabel.font = font
+            toastLabel.textAlignment = .center
+            toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            toastLabel.textColor = UIColor.white
+            toastLabel.alpha = 1.0
+            toastLabel.layer.cornerRadius = 10;
+            toastLabel.clipsToBounds  =  true
+            self.view.addSubview(toastLabel)
+            UIView.animate(withDuration: 1.0, delay: 1.0, options: .curveEaseOut, animations: {toastLabel.alpha = 0.0}, completion: {
+                (isCompleted) in
+                toastLabel.removeFromSuperview()
+            })
+        }
+        
+    }
 
 }
 
