@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSource, UITextFieldDelegate {
     
     
     @IBOutlet var searchField: UITextField!
@@ -19,8 +19,17 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     
     struct CookRCP01:Codable{
         var total_count:String?
-        var row:[Row?] = [nil]      //검색결과가 없을 때 리턴되지 않음
+        var row:[Row?] = [Row]()    //검색결과가 없을 때 리턴되지 않음
         var RESULT:Result?
+        
+        init(from decoder: Decoder) throws{
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            total_count = (try? values.decode(String.self, forKey: .total_count)) ?? ""
+            RESULT = try? values.decodeIfPresent(Result.self, forKey: .RESULT)
+            row = try values.decodeIfPresent([Row?].self, forKey: .row) ?? [nil]
+
+            //self.thumbnailURL = try container.decodeIfPresent(String.self, forKey: .thumnailURL)
+        }
     }
     
     struct Row:Codable{
@@ -95,8 +104,8 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         super.viewDidLoad()
         mainTableView.delegate = self
         mainTableView.dataSource = self
-        
-        
+        searchField.delegate = self
+        setupTextFields()
         //검색바 돋보기이미지 생성 및 배치
 
         let imageView = UIImageView(frame: CGRect(x: 5, y: 2, width: 25, height: 25))
@@ -108,36 +117,25 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
  
         searchField.leftView = leftView
         searchField.leftViewMode = .always
-        
+        //Clear버튼 활성화
+        searchField.clearButtonMode = .whileEditing
     }
 
     @IBAction func searchBtn(_ sender: Any) {
         
-        //텍스트를 입력한 경우 검색 키워드 저장
-        if let search = searchField.text, search != "" {
-            print("not nil")
-            self.keyword = search
-        }
-        //검색하지 않은 경우 검색 키워드를 비움
-        else{
-            self.keyword = nil
-        }
-        
-        //테이블뷰 cell이 생성되었을 때 테이블뷰를 최상단으로 이동
-        if self.recipeData != nil {
-            let indexPath = IndexPath(row: 0, section: 0)
-            mainTableView.scrollToRow(at: indexPath, at: .top, animated: true)
-        }
-        
-        self.recipeData = nil
-        getRecipeData(Ingredients: keyword)
-        
-       
-        
-        
+        SearchRecipe(keyword: searchField.text)
     }
     
- 
+    //키보드 Return버튼을 누르면 키보드가 내려감
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        SearchRecipe(keyword: searchField.text)
+        
+        searchField.resignFirstResponder()
+        
+        return true
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.recipeData?.COOKRCP01.row.count ?? 0  //페이지당 5개
@@ -183,7 +181,7 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         
         var urlKorString = "https://openapi.foodsafetykorea.go.kr/api/aa2b9872939a45888fd3/COOKRCP01/json/\(startIndex)/\(endIndex)"
         
-        if let search = Ingredients {
+        if let search = Ingredients, search != "" {
             urlKorString += "/RCP_PARTS_DTLS=\(search)"
         }
         
@@ -202,7 +200,14 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
             
             do {
                 let decodedData = try decoder.decode(RCP.self, from: data!)
-                //print(decodedData)
+                
+                guard let searchCount = decodedData.COOKRCP01.total_count, searchCount != "0" else {
+
+                    self.showToast(message: "검색결과가 없습니다")
+                    print("Message: \(decodedData.COOKRCP01.RESULT?.MSG), CODE: \(decodedData.COOKRCP01.RESULT?.CODE)")
+                    return
+                }
+
                 
                 //생성자로 생성된 배열은 append로 nil값에 데이터를 삽입할 수 있음
                 //struct은 구조체 생성 및 내부 구조체 역시 생성되야 하므로 기본 생성자로는 생성불가함 디코딩한 JOSNE값을 직접 넣어줌으로써 초기화하는 과정이 필요
@@ -263,7 +268,7 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
             toastLabel.layer.cornerRadius = 10;
             toastLabel.clipsToBounds  =  true
             self.view.addSubview(toastLabel)
-            UIView.animate(withDuration: 1.0, delay: 1.0, options: .curveEaseOut, animations: {toastLabel.alpha = 0.0}, completion: {
+            UIView.animate(withDuration: 1.0, delay: 1.5, options: .curveEaseOut, animations: {toastLabel.alpha = 0.0}, completion: {
                 (isCompleted) in
                 toastLabel.removeFromSuperview()
             })
@@ -271,6 +276,56 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+
+         self.view.endEditing(true)
+
+   }
+    
+    //레시피 검색, 주어진 키워드로 레시피를 가져온다
+    func SearchRecipe(keyword:String?){
+        
+        //텍스트를 입력한 경우 검색 키워드 저장
+        if let search = keyword, search != "" {
+            print("not nil: \(search)")
+            self.keyword = search
+        }
+        //검색하지 않은 경우 검색 키워드를 비움
+        else{
+            self.keyword = nil
+        }
+        
+        //테이블뷰 cell이 생성되었을 때 테이블뷰를 최상단으로 이동
+        if self.recipeData != nil {
+            let indexPath = IndexPath(row: 0, section: 0)
+            mainTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        }
+        
+        //키보드 내리기
+        view.endEditing(true)
+
+        self.recipeData = nil
+        getRecipeData(Ingredients: keyword)
+    }
+    
+    
+    func setupTextFields() {
+        let toolbar = UIToolbar()
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                        target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done,
+                                         target: self, action: #selector(doneButtonTapped))
+        
+        toolbar.setItems([flexSpace, doneButton], animated: true)
+        toolbar.sizeToFit()
+        
+        searchField.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneButtonTapped() {
+        view.endEditing(true)
+    }
+    
 }
 
 

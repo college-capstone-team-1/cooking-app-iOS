@@ -129,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.6956521739131" y="22.767857142857142"/>
+            <point key="canvasLocation" x="914" y="-40"/>
         </scene>
         <!--Favorite Recipes-->
         <scene sceneID="NfS-XV-wBK">
@@ -145,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnl-mD-3bd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671.0144927536232" y="154.6875"/>
+            <point key="canvasLocation" x="1593" y="45"/>
         </scene>
         <!--Settings-->
         <scene sceneID="bc4-FT-cBh">
@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAl-zm-TQb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2350" y="34"/>
+            <point key="canvasLocation" x="2254" y="-40"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="W6j-cv-jff">
