@@ -16,6 +16,8 @@
 		9A2367C428ED3C1D00D43F9D /* EcoRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367C328ED3C1D00D43F9D /* EcoRecipeTests.swift */; };
 		9A2367CE28ED3C1D00D43F9D /* EcoRecipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367CD28ED3C1D00D43F9D /* EcoRecipeUITests.swift */; };
 		9A2367D028ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367CF28ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift */; };
+		9A4037E22903D7B900C2C090 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4037E12903D7B900C2C090 /* DetailViewController.swift */; };
+		9A4037E42904078600C2C090 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4037E32904078600C2C090 /* DetailTableViewCell.swift */; };
 		9AC986A228F3E4C5009A8E54 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		9A2367C928ED3C1D00D43F9D /* cooking-app-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cooking-app-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2367CD28ED3C1D00D43F9D /* EcoRecipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoRecipeUITests.swift; sourceTree = "<group>"; };
 		9A2367CF28ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoRecipeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9A4037E12903D7B900C2C090 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9A4037E32904078600C2C090 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,11 +108,13 @@
 				9A2367AC28ED3C1C00D43F9D /* AppDelegate.swift */,
 				9A2367AE28ED3C1C00D43F9D /* SceneDelegate.swift */,
 				9A2367B028ED3C1C00D43F9D /* ViewController.swift */,
+				9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */,
 				9A2367B228ED3C1C00D43F9D /* Main.storyboard */,
+				9A4037E12903D7B900C2C090 /* DetailViewController.swift */,
+				9A4037E32904078600C2C090 /* DetailTableViewCell.swift */,
 				9A2367B528ED3C1D00D43F9D /* Assets.xcassets */,
 				9A2367B728ED3C1D00D43F9D /* LaunchScreen.storyboard */,
 				9A2367BA28ED3C1D00D43F9D /* Info.plist */,
-				9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */,
 			);
 			path = "cooking-app-iOS";
 			sourceTree = "<group>";
@@ -263,6 +269,8 @@
 			files = (
 				9A2367B128ED3C1C00D43F9D /* ViewController.swift in Sources */,
 				9A2367AD28ED3C1C00D43F9D /* AppDelegate.swift in Sources */,
+				9A4037E42904078600C2C090 /* DetailTableViewCell.swift in Sources */,
+				9A4037E22903D7B900C2C090 /* DetailViewController.swift in Sources */,
 				9AC986A228F3E4C5009A8E54 /* MainTableViewCell.swift in Sources */,
 				9A2367AF28ED3C1C00D43F9D /* SceneDelegate.swift in Sources */,
 			);

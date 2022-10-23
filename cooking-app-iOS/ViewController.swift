@@ -106,8 +106,8 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         mainTableView.dataSource = self
         searchField.delegate = self
         setupTextFields()
+        
         //검색바 돋보기이미지 생성 및 배치
-
         let imageView = UIImageView(frame: CGRect(x: 5, y: 2, width: 25, height: 25))
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "ic_search.png")
@@ -119,6 +119,9 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         searchField.leftViewMode = .always
         //Clear버튼 활성화
         searchField.clearButtonMode = .whileEditing
+        
+        //레시피 검색
+        getRecipeData()
     }
 
     @IBAction func searchBtn(_ sender: Any) {
@@ -175,8 +178,27 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         print(indexPath.description)
     }
     
+    //segue가 동작하기 전 호출
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let dest = segue.destination as? DetailViewController else {return}
+        let myIndexPath = mainTableView.indexPathForSelectedRow!
+        let row = myIndexPath.row
+        
+                            //음식 이름
+        dest.recipeTuple = (name:recipeData?.COOKRCP01.row[row]?.RCP_NM,
+                            //음식 사진
+                            img:recipeData?.COOKRCP01.row[row]?.ATT_FILE_NO_MAIN,
+                            //음식 재료
+                            dtls:recipeData?.COOKRCP01.row[row]?.RCP_PARTS_DTLS?.components(separatedBy: "\n").joined(),
+                            //만드는법 배열
+                            manual:[recipeData?.COOKRCP01.row[row]?.MANUAL01,recipeData?.COOKRCP01.row[row]?.MANUAL02,recipeData?.COOKRCP01.row[row]?.MANUAL03,recipeData?.COOKRCP01.row[row]?.MANUAL04,recipeData?.COOKRCP01.row[row]?.MANUAL05,recipeData?.COOKRCP01.row[row]?.MANUAL06,recipeData?.COOKRCP01.row[row]?.MANUAL07, recipeData?.COOKRCP01.row[row]?.MANUAL08, recipeData?.COOKRCP01.row[row]?.MANUAL09, recipeData?.COOKRCP01.row[row]?.MANUAL10].filter{ $0 != ""}.map{ Optional($0!.components(separatedBy: "\n").joined())},
+                            //만드는법 사진링크 배열
+                            manualImg:[recipeData?.COOKRCP01.row[row]?.MANUAL_IMG01, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG02, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG03, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG04, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG05, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG06, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG07, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG08, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG09, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG10].filter{ $0 != ""}
+                            )
+    }
     
-    
+    //레시피 리스트 가져옴
     func getRecipeData(Ingredients:String? = nil, startIndex:Int = 1, endIndex:Int = 5){
         
         var urlKorString = "https://openapi.foodsafetykorea.go.kr/api/aa2b9872939a45888fd3/COOKRCP01/json/\(startIndex)/\(endIndex)"
@@ -208,10 +230,6 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
                     return
                 }
 
-                
-                //생성자로 생성된 배열은 append로 nil값에 데이터를 삽입할 수 있음
-                //struct은 구조체 생성 및 내부 구조체 역시 생성되야 하므로 기본 생성자로는 생성불가함 디코딩한 JOSNE값을 직접 넣어줌으로써 초기화하는 과정이 필요
-                
                 self.currentPage = endIndex + 1
                 
                 //데이터가 없는경우
@@ -229,7 +247,6 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
                     self.mainTableView.reloadData()
                 }
 
-                
             }catch{
                 
                 print("Can not load recipe Data, check the error msg")
@@ -252,10 +269,9 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         }
     }
     
+    //토스트 label 생성
     func showToast(message : String, font: UIFont = UIFont.systemFont(ofSize: 14.0)) {
-        
-        //let width = message.count * 15
-        
+
         //UIlabel뷰 생성
         DispatchQueue.main.async {
             let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-150, width: 150, height: 30))
@@ -275,11 +291,10 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         }
         
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
 
          self.view.endEditing(true)
-
    }
     
     //레시피 검색, 주어진 키워드로 레시피를 가져온다
@@ -309,6 +324,7 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     }
     
     
+    //키보드에 Done 툴바 생성
     func setupTextFields() {
         let toolbar = UIToolbar()
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
