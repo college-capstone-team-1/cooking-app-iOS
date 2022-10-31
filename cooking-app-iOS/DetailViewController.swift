@@ -15,7 +15,17 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var header: UIView!
     @IBOutlet weak var table: UITableView!
     
-    var recipeTuple:(name:String?,          //레시피 이름
+    var recipeTuple:(seq:String?,           //레시피 일련번호
+                    name:String?,           //레시피 이름
+                    way2:String?,           //조리방식
+                    pat2:String?,           //요리종류
+                    wtg:String?,            //중량(1인분)
+                    eng:String?,            //열량(1인분)
+                    car:String?,            //탄수화물
+                    pro:String?,            //단백질
+                    fat:String?,            //지방
+                    na:String?,             //나트륨
+                    tag:String?,            //해쉬태그
                     img:String?,            //이미지 경로
                     dtls:String?,           //재료 목록
                     manual:Array<String?>,  //만드는법 설명

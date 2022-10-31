@@ -185,8 +185,28 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         let myIndexPath = mainTableView.indexPathForSelectedRow!
         let row = myIndexPath.row
         
+                            //일련번호
+        dest.recipeTuple = (seq:recipeData?.COOKRCP01.row[row]?.RCP_SEQ,
                             //음식 이름
-        dest.recipeTuple = (name:recipeData?.COOKRCP01.row[row]?.RCP_NM,
+                            name:recipeData?.COOKRCP01.row[row]?.RCP_NM,
+                            //조리방식
+                            way2:recipeData?.COOKRCP01.row[row]?.RCP_WAY2,
+                            //요리종류
+                            pat2:recipeData?.COOKRCP01.row[row]?.RCP_PAT2,
+                            //중량(1인분)
+                            wtg:recipeData?.COOKRCP01.row[row]?.INFO_WGT,
+                            //열량(1인분)
+                            eng:recipeData?.COOKRCP01.row[row]?.INFO_ENG,
+                            //탄수화물
+                            car:recipeData?.COOKRCP01.row[row]?.INFO_CAR,
+                            //단백질
+                            pro:recipeData?.COOKRCP01.row[row]?.INFO_PRO,
+                            //지방
+                            fat:recipeData?.COOKRCP01.row[row]?.INFO_FAT,
+                            //나트륨
+                            na:recipeData?.COOKRCP01.row[row]?.INFO_NA,
+                            //해쉬태그
+                            tag:recipeData?.COOKRCP01.row[row]?.HASH_TAG,
                             //음식 사진
                             img:recipeData?.COOKRCP01.row[row]?.ATT_FILE_NO_MAIN,
                             //음식 재료
