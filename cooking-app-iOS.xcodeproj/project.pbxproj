@@ -18,6 +18,10 @@
 		9A2367D028ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367CF28ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift */; };
 		9A4037E22903D7B900C2C090 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4037E12903D7B900C2C090 /* DetailViewController.swift */; };
 		9A4037E42904078600C2C090 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4037E32904078600C2C090 /* DetailTableViewCell.swift */; };
+		9A58E481290C01C6006B0118 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A58E47F290C01C6006B0118 /* Model.xcdatamodeld */; };
+		9AB65AFE290FA8CA007DFACA /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB65AFD290FA8CA007DFACA /* FavoriteViewController.swift */; };
+		9AB65B00290FA8F1007DFACA /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB65AFF290FA8F1007DFACA /* FavoriteTableViewCell.swift */; };
+		9ABE2ABD29137C1800228F59 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE2ABC29137C1800228F59 /* TabBarController.swift */; };
 		9AC986A228F3E4C5009A8E54 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,10 @@
 		9A2367CF28ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoRecipeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9A4037E12903D7B900C2C090 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9A4037E32904078600C2C090 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		9A58E480290C01C6006B0118 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		9AB65AFD290FA8CA007DFACA /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		9AB65AFF290FA8F1007DFACA /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		9ABE2ABC29137C1800228F59 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +93,7 @@
 		9A2367A028ED3C1C00D43F9D = {
 			isa = PBXGroup;
 			children = (
+				9ABE2ABC29137C1800228F59 /* TabBarController.swift */,
 				9A2367AB28ED3C1C00D43F9D /* cooking-app-iOS */,
 				9A2367C228ED3C1D00D43F9D /* cooking-app-iOSTests */,
 				9A2367CC28ED3C1D00D43F9D /* cooking-app-iOSUITests */,
@@ -108,10 +117,13 @@
 				9A2367AC28ED3C1C00D43F9D /* AppDelegate.swift */,
 				9A2367AE28ED3C1C00D43F9D /* SceneDelegate.swift */,
 				9A2367B028ED3C1C00D43F9D /* ViewController.swift */,
+				9A58E47F290C01C6006B0118 /* Model.xcdatamodeld */,
 				9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */,
 				9A2367B228ED3C1C00D43F9D /* Main.storyboard */,
 				9A4037E12903D7B900C2C090 /* DetailViewController.swift */,
 				9A4037E32904078600C2C090 /* DetailTableViewCell.swift */,
+				9AB65AFD290FA8CA007DFACA /* FavoriteViewController.swift */,
+				9AB65AFF290FA8F1007DFACA /* FavoriteTableViewCell.swift */,
 				9A2367B528ED3C1D00D43F9D /* Assets.xcassets */,
 				9A2367B728ED3C1D00D43F9D /* LaunchScreen.storyboard */,
 				9A2367BA28ED3C1D00D43F9D /* Info.plist */,
@@ -270,8 +282,12 @@
 				9A2367B128ED3C1C00D43F9D /* ViewController.swift in Sources */,
 				9A2367AD28ED3C1C00D43F9D /* AppDelegate.swift in Sources */,
 				9A4037E42904078600C2C090 /* DetailTableViewCell.swift in Sources */,
+				9ABE2ABD29137C1800228F59 /* TabBarController.swift in Sources */,
+				9A58E481290C01C6006B0118 /* Model.xcdatamodeld in Sources */,
+				9AB65B00290FA8F1007DFACA /* FavoriteTableViewCell.swift in Sources */,
 				9A4037E22903D7B900C2C090 /* DetailViewController.swift in Sources */,
 				9AC986A228F3E4C5009A8E54 /* MainTableViewCell.swift in Sources */,
+				9AB65AFE290FA8CA007DFACA /* FavoriteViewController.swift in Sources */,
 				9A2367AF28ED3C1C00D43F9D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +628,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9A58E47F290C01C6006B0118 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9A58E480290C01C6006B0118 /* Model.xcdatamodel */,
+			);
+			currentVersion = 9A58E480290C01C6006B0118 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9A2367A128ED3C1C00D43F9D /* Project object */;
 }

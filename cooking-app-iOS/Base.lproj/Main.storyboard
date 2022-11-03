@@ -142,7 +142,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="OMh-oc-7qd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="537"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="569"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="음식 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yE0-sj-jh0" userLabel="Name">
@@ -155,20 +155,20 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T3S-lN-8Uk">
-                                            <rect key="frame" x="0.0" y="56" width="414" height="300"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T3S-lN-8Uk">
+                                            <rect key="frame" x="0.0" y="96" width="414" height="300"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="300" id="KVc-B6-20j"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="재료 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0h-VW-pbb" userLabel="재료 목록">
-                                            <rect key="frame" x="30" y="426" width="354" height="20.5"/>
+                                            <rect key="frame" x="30" y="466" width="354" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="재료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZj-FN-qfV">
-                                            <rect key="frame" x="30" y="386" width="45" height="30"/>
+                                            <rect key="frame" x="30" y="426" width="45" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="gSm-IR-EQE"/>
                                                 <constraint firstAttribute="width" constant="45" id="oap-xU-Oeg"/>
@@ -177,9 +177,21 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHR-SO-lJG" userLabel="favoriteButton">
+                                            <rect key="frame" x="354" y="61" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="lDf-43-sus"/>
+                                                <constraint firstAttribute="height" constant="30" id="nPR-0Y-GdP"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                            <connections>
+                                                <action selector="favoriteEntityController:" destination="kjn-iC-nJy" eventType="touchUpInside" id="4HX-J7-5mY"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="T3S-lN-8Uk" firstAttribute="top" secondItem="yE0-sj-jh0" secondAttribute="bottom" priority="750" constant="10" id="3uF-U7-2ZI"/>
+                                        <constraint firstItem="ZHR-SO-lJG" firstAttribute="top" secondItem="yE0-sj-jh0" secondAttribute="bottom" constant="15" id="0L9-Q9-Hgp"/>
                                         <constraint firstItem="yE0-sj-jh0" firstAttribute="trailing" secondItem="R0h-VW-pbb" secondAttribute="trailing" id="6og-Sd-PPi"/>
                                         <constraint firstItem="R0h-VW-pbb" firstAttribute="top" secondItem="aZj-FN-qfV" secondAttribute="bottom" constant="10" id="O8x-6U-iGN"/>
                                         <constraint firstItem="T3S-lN-8Uk" firstAttribute="leading" secondItem="OMh-oc-7qd" secondAttribute="leading" id="Rsn-GG-gJn"/>
@@ -190,12 +202,14 @@
                                         <constraint firstItem="yE0-sj-jh0" firstAttribute="leading" secondItem="OMh-oc-7qd" secondAttribute="leading" constant="30" id="h51-2e-Htw"/>
                                         <constraint firstAttribute="trailing" secondItem="yE0-sj-jh0" secondAttribute="trailing" constant="30" id="mNT-cI-KeG"/>
                                         <constraint firstItem="R0h-VW-pbb" firstAttribute="leading" secondItem="yE0-sj-jh0" secondAttribute="leading" id="sDW-31-DDO"/>
+                                        <constraint firstItem="yE0-sj-jh0" firstAttribute="trailing" secondItem="ZHR-SO-lJG" secondAttribute="trailing" id="tJe-nC-HMG"/>
                                         <constraint firstItem="aZj-FN-qfV" firstAttribute="top" secondItem="T3S-lN-8Uk" secondAttribute="bottom" constant="30" id="taF-jL-Z66"/>
+                                        <constraint firstItem="T3S-lN-8Uk" firstAttribute="top" secondItem="ZHR-SO-lJG" secondAttribute="bottom" constant="5" id="z1J-DO-FU0"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailTableViewCell" rowHeight="145" id="2za-kd-hIs" customClass="DetailTableViewCell" customModule="cooking_app_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="581.5" width="414" height="145"/>
+                                        <rect key="frame" x="0.0" y="613.5" width="414" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2za-kd-hIs" id="PfD-GR-bvR">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="145"/>
@@ -244,6 +258,7 @@
                     </view>
                     <navigationItem key="navigationItem" title=" Detail" id="y2r-4z-jlV"/>
                     <connections>
+                        <outlet property="favoriteButton" destination="ZHR-SO-lJG" id="zKr-2v-Cny"/>
                         <outlet property="header" destination="OMh-oc-7qd" id="VLT-Xu-gE7"/>
                         <outlet property="lbDtls" destination="R0h-VW-pbb" id="Aul-8M-uc0"/>
                         <outlet property="lbName" destination="yE0-sj-jh0" id="eKc-hq-Gr4"/>
@@ -253,23 +268,125 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8R-Jr-rA2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918.84057971014499" y="1421.6517857142856"/>
+            <point key="canvasLocation" x="1244.9275362318842" y="1577.6785714285713"/>
         </scene>
-        <!--Favorite Recipes-->
+        <!--Favorite List-->
         <scene sceneID="NfS-XV-wBK">
             <objects>
-                <viewController id="GKC-dT-4Is" customClass="ViewController2" customModule="cooking_app_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GKC-dT-4Is" customClass="FavoriteViewController" customModule="cooking_app_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CNj-aM-ijl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmU-1a-iOc" userLabel="Search">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhd-Nb-BL0">
+                                        <rect key="frame" x="341" y="2" width="65" height="46"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="COr-7N-F8d"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="검색">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="13" name="AppleMyungjo"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="searchBtn:" destination="GKC-dT-4Is" eventType="touchUpInside" id="1fO-jp-nDj"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7HP-Z9-oIQ">
+                                        <rect key="frame" x="8" y="8" width="325" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Fhd-Nb-BL0" firstAttribute="top" secondItem="zmU-1a-iOc" secondAttribute="top" constant="2" id="24F-rg-gU6"/>
+                                    <constraint firstAttribute="bottom" secondItem="7HP-Z9-oIQ" secondAttribute="bottom" constant="8" id="69I-aC-zbY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fhd-Nb-BL0" secondAttribute="trailing" constant="8" id="DlG-6Y-yBd"/>
+                                    <constraint firstAttribute="height" constant="50" id="LcT-sc-4Ve"/>
+                                    <constraint firstItem="Fhd-Nb-BL0" firstAttribute="leading" secondItem="7HP-Z9-oIQ" secondAttribute="trailing" constant="8" id="Tm9-BT-YHw"/>
+                                    <constraint firstItem="7HP-Z9-oIQ" firstAttribute="leading" secondItem="zmU-1a-iOc" secondAttribute="leading" constant="8" id="XAB-km-s5R"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fhd-Nb-BL0" secondAttribute="bottom" constant="2" id="bDP-xL-th5"/>
+                                    <constraint firstItem="7HP-Z9-oIQ" firstAttribute="top" secondItem="zmU-1a-iOc" secondAttribute="top" constant="8" id="g44-ll-jGB"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LWV-1M-ec0">
+                                <rect key="frame" x="0.0" y="138" width="414" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteTableViewCell" rowHeight="257" id="nSv-87-1Yf" userLabel="FavoriteTableViewCell" customClass="FavoriteTableViewCell" customModule="cooking_app_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="257"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nSv-87-1Yf" id="saT-Yv-PRk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="257"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vdK-J1-Hsi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="194"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="194" id="4F1-N4-SyG"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HK6-OW-75Z">
+                                                    <rect key="frame" x="20" y="209" width="374" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="vdK-J1-Hsi" secondAttribute="trailing" id="0zk-Rv-U8y"/>
+                                                <constraint firstItem="HK6-OW-75Z" firstAttribute="top" secondItem="vdK-J1-Hsi" secondAttribute="bottom" constant="15" id="HRy-qv-BNi"/>
+                                                <constraint firstItem="HK6-OW-75Z" firstAttribute="bottom" secondItem="saT-Yv-PRk" secondAttribute="bottomMargin" constant="-15" id="L2w-CR-jv4"/>
+                                                <constraint firstItem="vdK-J1-Hsi" firstAttribute="leading" secondItem="saT-Yv-PRk" secondAttribute="leading" id="b6p-Zl-G5N"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="HK6-OW-75Z" secondAttribute="trailing" id="ecK-0D-kta"/>
+                                                <constraint firstItem="vdK-J1-Hsi" firstAttribute="top" secondItem="saT-Yv-PRk" secondAttribute="top" id="fXj-FF-tBo"/>
+                                                <constraint firstItem="HK6-OW-75Z" firstAttribute="leading" secondItem="saT-Yv-PRk" secondAttribute="leadingMargin" id="ktY-wU-Oqr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mainImg" destination="vdK-J1-Hsi" id="4bf-fL-ZZQ"/>
+                                            <outlet property="rcpName" destination="HK6-OW-75Z" id="W08-58-rMy"/>
+                                            <segue destination="kjn-iC-nJy" kind="show" id="xvG-2Y-psU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="w4a-9A-iHo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LWV-1M-ec0" firstAttribute="leading" secondItem="w4a-9A-iHo" secondAttribute="leading" id="Gvi-ex-zvt"/>
+                            <constraint firstItem="zmU-1a-iOc" firstAttribute="trailing" secondItem="w4a-9A-iHo" secondAttribute="trailing" id="JC9-Da-nKs"/>
+                            <constraint firstItem="zmU-1a-iOc" firstAttribute="top" secondItem="w4a-9A-iHo" secondAttribute="top" id="jFh-q2-eRG"/>
+                            <constraint firstItem="LWV-1M-ec0" firstAttribute="bottom" secondItem="CNj-aM-ijl" secondAttribute="bottom" id="kHK-kX-Sjy"/>
+                            <constraint firstItem="zmU-1a-iOc" firstAttribute="leading" secondItem="w4a-9A-iHo" secondAttribute="leading" id="nGn-bP-8KK"/>
+                            <constraint firstItem="LWV-1M-ec0" firstAttribute="trailing" secondItem="w4a-9A-iHo" secondAttribute="trailing" id="niR-pQ-xFq"/>
+                            <constraint firstItem="LWV-1M-ec0" firstAttribute="top" secondItem="zmU-1a-iOc" secondAttribute="bottom" id="wKJ-KV-6MO"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorite Recipes" image="heart.fill" catalog="system" selectedImage="heart.fill" id="AdK-di-GB0"/>
+                    <navigationItem key="navigationItem" title="Favorite List" id="Aem-Tg-wKh"/>
+                    <connections>
+                        <outlet property="favoriteTableView" destination="LWV-1M-ec0" id="VcB-3E-UeV"/>
+                        <outlet property="searchField" destination="7HP-Z9-oIQ" id="eqR-mn-xdj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnl-mD-3bd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1597" y="45"/>
+            <point key="canvasLocation" x="1675" y="798"/>
         </scene>
         <!--Settings-->
         <scene sceneID="bc4-FT-cBh">
@@ -285,12 +402,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAl-zm-TQb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2317" y="-135"/>
+            <point key="canvasLocation" x="2329" y="-135"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="W6j-cv-jff">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="o5o-dC-zDX" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="o5o-dC-zDX" customClass="TabBarController" customModule="cooking_app_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" shadowImage="magnifyingglass" catalog="system" id="YXz-9t-LeP">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -299,7 +416,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="ioY-QI-hWD" kind="relationship" relationship="viewControllers" id="NIZ-Sz-RQr"/>
-                        <segue destination="GKC-dT-4Is" kind="relationship" relationship="viewControllers" id="HrO-Dq-ZeW"/>
+                        <segue destination="rPD-2v-3sL" kind="relationship" relationship="viewControllers" id="HrO-Dq-ZeW"/>
                         <segue destination="Gsd-fT-Aen" kind="relationship" relationship="viewControllers" id="abU-hL-nqS"/>
                     </connections>
                 </tabBarController>
@@ -328,9 +445,32 @@
             </objects>
             <point key="canvasLocation" x="919" y="-135"/>
         </scene>
+        <!--Favorite Recipes-->
+        <scene sceneID="hGO-sa-fgZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rPD-2v-3sL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorite Recipes" image="heart.fill" catalog="system" selectedImage="heart.fill" id="AdK-di-GB0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Yl-f3-OBq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GKC-dT-4Is" kind="relationship" relationship="rootViewController" id="4v2-FE-03O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3lg-PQ-fKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1623" y="11"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xvG-2Y-psU"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Favorite" representedClassName="Favorite" syncable="YES" codeGenerationType="class">
+        <attribute name="att_file_no_main" optional="YES" attributeType="String"/>
+        <attribute name="attl_file_no_mk" optional="YES" attributeType="String"/>
+        <attribute name="hash_tag" optional="YES" attributeType="String"/>
+        <attribute name="info_car" optional="YES" attributeType="String"/>
+        <attribute name="info_eng" optional="YES" attributeType="String"/>
+        <attribute name="info_fat" optional="YES" attributeType="String"/>
+        <attribute name="info_na" optional="YES" attributeType="String"/>
+        <attribute name="info_pro" optional="YES" attributeType="String"/>
+        <attribute name="info_wgt" optional="YES" attributeType="String"/>
+        <attribute name="manual_img01" optional="YES" attributeType="String"/>
+        <attribute name="manual_img02" optional="YES" attributeType="String"/>
+        <attribute name="manual_img03" optional="YES" attributeType="String"/>
+        <attribute name="manual_img04" optional="YES" attributeType="String"/>
+        <attribute name="manual_img05" optional="YES" attributeType="String"/>
+        <attribute name="manual_img06" optional="YES" attributeType="String"/>
+        <attribute name="manual_img07" optional="YES" attributeType="String"/>
+        <attribute name="manual_img08" optional="YES" attributeType="String"/>
+        <attribute name="manual_img09" optional="YES" attributeType="String"/>
+        <attribute name="manual_img10" optional="YES" attributeType="String"/>
+        <attribute name="manual_img11" optional="YES" attributeType="String"/>
+        <attribute name="manual_img12" optional="YES" attributeType="String"/>
+        <attribute name="manual_img13" optional="YES" attributeType="String"/>
+        <attribute name="manual_img14" optional="YES" attributeType="String"/>
+        <attribute name="manual_img15" optional="YES" attributeType="String"/>
+        <attribute name="manual_img16" optional="YES" attributeType="String"/>
+        <attribute name="manual_img17" optional="YES" attributeType="String"/>
+        <attribute name="manual_img18" optional="YES" attributeType="String"/>
+        <attribute name="manual_img19" optional="YES" attributeType="String"/>
+        <attribute name="manual_img20" optional="YES" attributeType="String"/>
+        <attribute name="manual01" optional="YES" attributeType="String"/>
+        <attribute name="manual02" optional="YES" attributeType="String"/>
+        <attribute name="manual03" optional="YES" attributeType="String"/>
+        <attribute name="manual04" optional="YES" attributeType="String"/>
+        <attribute name="manual05" optional="YES" attributeType="String"/>
+        <attribute name="manual06" optional="YES" attributeType="String"/>
+        <attribute name="manual07" optional="YES" attributeType="String"/>
+        <attribute name="manual08" optional="YES" attributeType="String"/>
+        <attribute name="manual09" optional="YES" attributeType="String"/>
+        <attribute name="manual10" optional="YES" attributeType="String"/>
+        <attribute name="manual11" optional="YES" attributeType="String"/>
+        <attribute name="manual12" optional="YES" attributeType="String"/>
+        <attribute name="manual13" optional="YES" attributeType="String"/>
+        <attribute name="manual14" optional="YES" attributeType="String"/>
+        <attribute name="manual15" optional="YES" attributeType="String"/>
+        <attribute name="manual16" optional="YES" attributeType="String"/>
+        <attribute name="manual17" optional="YES" attributeType="String"/>
+        <attribute name="manual18" optional="YES" attributeType="String"/>
+        <attribute name="manual19" optional="YES" attributeType="String"/>
+        <attribute name="manual20" optional="YES" attributeType="String"/>
+        <attribute name="rcp_nm" optional="YES" attributeType="String"/>
+        <attribute name="rcp_parts_dtls" optional="YES" attributeType="String"/>
+        <attribute name="rcp_pat2" optional="YES" attributeType="String"/>
+        <attribute name="rcp_seq" optional="YES" attributeType="String"/>
+        <attribute name="rcp_way2" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Favorite" positionX="360.09765625" positionY="-158.9609375" width="128" height="839"/>
+    </elements>
+</model>
