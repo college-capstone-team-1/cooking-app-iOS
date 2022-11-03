@@ -93,7 +93,6 @@
 		9A2367A028ED3C1C00D43F9D = {
 			isa = PBXGroup;
 			children = (
-				9ABE2ABC29137C1800228F59 /* TabBarController.swift */,
 				9A2367AB28ED3C1C00D43F9D /* cooking-app-iOS */,
 				9A2367C228ED3C1D00D43F9D /* cooking-app-iOSTests */,
 				9A2367CC28ED3C1D00D43F9D /* cooking-app-iOSUITests */,
@@ -116,6 +115,7 @@
 			children = (
 				9A2367AC28ED3C1C00D43F9D /* AppDelegate.swift */,
 				9A2367AE28ED3C1C00D43F9D /* SceneDelegate.swift */,
+				9ABE2ABC29137C1800228F59 /* TabBarController.swift */,
 				9A2367B028ED3C1C00D43F9D /* ViewController.swift */,
 				9A58E47F290C01C6006B0118 /* Model.xcdatamodeld */,
 				9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */,
