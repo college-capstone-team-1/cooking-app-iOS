@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o5o-dC-zDX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -122,13 +122,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recipe List" id="ikW-dx-P9C"/>
                     <connections>
-                        <outlet property="mainTableView" destination="Uiv-uC-7w7" id="OCm-s6-VRG"/>
-                        <outlet property="searchField" destination="8hX-QH-mUX" id="jBR-PO-PNb"/>
+                        <outlet property="mainTableView" destination="Uiv-uC-7w7" id="pVv-cI-ZI2"/>
+                        <outlet property="searchField" destination="8hX-QH-mUX" id="y0p-MX-rES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="704"/>
+            <point key="canvasLocation" x="918.84057971014499" y="703.79464285714278"/>
         </scene>
         <!-- Detail-->
         <scene sceneID="8IL-9m-0cy">
@@ -407,7 +407,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="W6j-cv-jff">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="o5o-dC-zDX" customClass="TabBarController" customModule="cooking_app_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TABBAR" automaticallyAdjustsScrollViewInsets="NO" id="o5o-dC-zDX" customClass="TabBarController" customModule="cooking_app_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" shadowImage="magnifyingglass" catalog="system" id="YXz-9t-LeP">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -422,7 +422,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJu-lh-oCU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="44.866071428571423"/>
+            <point key="canvasLocation" x="-16" y="-52"/>
         </scene>
         <!--Search Recipes-->
         <scene sceneID="rpj-9N-12h">
@@ -466,7 +466,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xvG-2Y-psU"/>
+        <segue reference="6RV-uC-1le"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape.circle.fill" catalog="system" width="128" height="121"/>

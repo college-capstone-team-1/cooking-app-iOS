@@ -18,9 +18,14 @@
 		9A2367D028ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367CF28ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift */; };
 		9A4037E22903D7B900C2C090 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4037E12903D7B900C2C090 /* DetailViewController.swift */; };
 		9A4037E42904078600C2C090 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4037E32904078600C2C090 /* DetailTableViewCell.swift */; };
+		9A41E4602919F4F200C8CA07 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A41E45F2919F4F100C8CA07 /* Login.storyboard */; };
+		9A41E462291A017100C8CA07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A41E461291A017100C8CA07 /* LoginViewController.swift */; };
 		9A58E481290C01C6006B0118 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A58E47F290C01C6006B0118 /* Model.xcdatamodeld */; };
 		9AB65AFE290FA8CA007DFACA /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB65AFD290FA8CA007DFACA /* FavoriteViewController.swift */; };
 		9AB65B00290FA8F1007DFACA /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB65AFF290FA8F1007DFACA /* FavoriteTableViewCell.swift */; };
+		9ABCA24D29142563002D8448 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9ABCA24C29142563002D8448 /* GoogleService-Info.plist */; };
+		9ABCA25029142730002D8448 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9ABCA24F29142730002D8448 /* FirebaseAnalytics */; };
+		9ABCA25229142730002D8448 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 9ABCA25129142730002D8448 /* FirebaseMessaging */; };
 		9ABE2ABD29137C1800228F59 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE2ABC29137C1800228F59 /* TabBarController.swift */; };
 		9AC986A228F3E4C5009A8E54 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -58,9 +63,12 @@
 		9A2367CF28ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoRecipeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9A4037E12903D7B900C2C090 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9A4037E32904078600C2C090 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		9A41E45F2919F4F100C8CA07 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		9A41E461291A017100C8CA07 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9A58E480290C01C6006B0118 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9AB65AFD290FA8CA007DFACA /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		9AB65AFF290FA8F1007DFACA /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		9ABCA24C29142563002D8448 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9ABE2ABC29137C1800228F59 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ABCA25229142730002D8448 /* FirebaseMessaging in Frameworks */,
+				9ABCA25029142730002D8448 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,12 +130,15 @@
 				9A58E47F290C01C6006B0118 /* Model.xcdatamodeld */,
 				9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */,
 				9A2367B228ED3C1C00D43F9D /* Main.storyboard */,
+				9A41E45F2919F4F100C8CA07 /* Login.storyboard */,
+				9A41E461291A017100C8CA07 /* LoginViewController.swift */,
 				9A4037E12903D7B900C2C090 /* DetailViewController.swift */,
 				9A4037E32904078600C2C090 /* DetailTableViewCell.swift */,
 				9AB65AFD290FA8CA007DFACA /* FavoriteViewController.swift */,
 				9AB65AFF290FA8F1007DFACA /* FavoriteTableViewCell.swift */,
 				9A2367B528ED3C1D00D43F9D /* Assets.xcassets */,
 				9A2367B728ED3C1D00D43F9D /* LaunchScreen.storyboard */,
+				9ABCA24C29142563002D8448 /* GoogleService-Info.plist */,
 				9A2367BA28ED3C1D00D43F9D /* Info.plist */,
 			);
 			path = "cooking-app-iOS";
@@ -164,6 +177,10 @@
 			dependencies = (
 			);
 			name = "cooking-app-iOS";
+			packageProductDependencies = (
+				9ABCA24F29142730002D8448 /* FirebaseAnalytics */,
+				9ABCA25129142730002D8448 /* FirebaseMessaging */,
+			);
 			productName = EcoRecipe;
 			productReference = 9A2367A928ED3C1C00D43F9D /* cooking-app-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -236,6 +253,9 @@
 				Base,
 			);
 			mainGroup = 9A2367A028ED3C1C00D43F9D;
+			packageReferences = (
+				9ABCA24E29142730002D8448 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 9A2367AA28ED3C1C00D43F9D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -253,7 +273,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A2367B928ED3C1D00D43F9D /* LaunchScreen.storyboard in Resources */,
+				9ABCA24D29142563002D8448 /* GoogleService-Info.plist in Resources */,
 				9A2367B628ED3C1D00D43F9D /* Assets.xcassets in Resources */,
+				9A41E4602919F4F200C8CA07 /* Login.storyboard in Resources */,
 				9A2367B428ED3C1C00D43F9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +311,7 @@
 				9AC986A228F3E4C5009A8E54 /* MainTableViewCell.swift in Sources */,
 				9AB65AFE290FA8CA007DFACA /* FavoriteViewController.swift in Sources */,
 				9A2367AF28ED3C1C00D43F9D /* SceneDelegate.swift in Sources */,
+				9A41E462291A017100C8CA07 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +495,7 @@
 				INFOPLIST_FILE = "cooking-app-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Login;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -484,7 +507,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -500,7 +523,7 @@
 				INFOPLIST_FILE = "cooking-app-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Login;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -512,7 +535,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -628,6 +651,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9ABCA24E29142730002D8448 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9ABCA24F29142730002D8448 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9ABCA24E29142730002D8448 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		9ABCA25129142730002D8448 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9ABCA24E29142730002D8448 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9A58E47F290C01C6006B0118 /* Model.xcdatamodeld */ = {
