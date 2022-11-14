@@ -7,6 +7,9 @@
 
 import UIKit
 import CoreData
+import Firebase
+import FirebaseMessaging
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions,completionHandler: {_, _ in })
+        application.registerForRemoteNotifications()
+
         return true
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+         Messaging.messaging().apnsToken = deviceToken
     }
 
     // MARK: UISceneSession Lifecycle
@@ -76,3 +91,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    // 포그라운드에서 푸시메시지 수신될 때
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("\(#function)")
+        print("UserInfo: \(notification.request.content.userInfo)")
+        completionHandler([.list, .banner, .sound, .badge])
+    }
+
+    // 푸시메시지를 눌렀을 때
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("\(#function)")
+        print("UserInfo: \(response.notification.request.content.userInfo)")
+        completionHandler()
+    }
+}
+
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        guard let fcmToken = fcmToken else {return}
+        print("파이어베이스 registration token: \(fcmToken)")
+    }
+}
