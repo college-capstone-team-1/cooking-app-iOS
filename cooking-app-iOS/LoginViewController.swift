@@ -11,8 +11,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //네이베이션바 제거, 스와이프 제스쳐는 가능
+        self.navigationController?.navigationBar.isHidden = true;
     }
     
     @IBAction func googleLogin(_ sender: Any) {
@@ -29,4 +29,10 @@ class LoginViewController: UIViewController {
     
     @IBAction func emailLogin(_ sender: Any) {
     }
+    
+    
+    @IBAction func closeBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

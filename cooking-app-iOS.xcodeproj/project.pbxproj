@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0BE74629231B82007A1687 /* GoogleService-Info-Dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A0BE74529231B82007A1687 /* GoogleService-Info-Dev.plist */; };
 		9A2367AD28ED3C1C00D43F9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367AC28ED3C1C00D43F9D /* AppDelegate.swift */; };
 		9A2367AF28ED3C1C00D43F9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367AE28ED3C1C00D43F9D /* SceneDelegate.swift */; };
 		9A2367B128ED3C1C00D43F9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367B028ED3C1C00D43F9D /* ViewController.swift */; };
@@ -16,19 +17,19 @@
 		9A2367C428ED3C1D00D43F9D /* EcoRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367C328ED3C1D00D43F9D /* EcoRecipeTests.swift */; };
 		9A2367CE28ED3C1D00D43F9D /* EcoRecipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367CD28ED3C1D00D43F9D /* EcoRecipeUITests.swift */; };
 		9A2367D028ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367CF28ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift */; };
-		9A2A387D292153E7009DC708 /* GoogleService-Info-Dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A2A387C292153E7009DC708 /* GoogleService-Info-Dev.plist */; };
 		9A4037E22903D7B900C2C090 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4037E12903D7B900C2C090 /* DetailViewController.swift */; };
 		9A4037E42904078600C2C090 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4037E32904078600C2C090 /* DetailTableViewCell.swift */; };
 		9A41E4602919F4F200C8CA07 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A41E45F2919F4F100C8CA07 /* Login.storyboard */; };
 		9A41E462291A017100C8CA07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A41E461291A017100C8CA07 /* LoginViewController.swift */; };
 		9A58E481290C01C6006B0118 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A58E47F290C01C6006B0118 /* Model.xcdatamodeld */; };
-		9AAF2BAD2922A004009A1080 /* GoogleService-Info-Rls.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AAF2BAC2922A004009A1080 /* GoogleService-Info-Rls.plist */; };
+		9A86EFC529232D9B00EE12BF /* GoogleService-Info-Rls.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A86EFC429232D9B00EE12BF /* GoogleService-Info-Rls.plist */; };
 		9AB65AFE290FA8CA007DFACA /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB65AFD290FA8CA007DFACA /* FavoriteViewController.swift */; };
 		9AB65B00290FA8F1007DFACA /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB65AFF290FA8F1007DFACA /* FavoriteTableViewCell.swift */; };
 		9ABCA25029142730002D8448 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9ABCA24F29142730002D8448 /* FirebaseAnalytics */; };
 		9ABCA25229142730002D8448 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 9ABCA25129142730002D8448 /* FirebaseMessaging */; };
 		9ABE2ABD29137C1800228F59 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE2ABC29137C1800228F59 /* TabBarController.swift */; };
 		9AC986A228F3E4C5009A8E54 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */; };
+		9ACA44C229235CE50084C663 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACA44C129235CE40084C663 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A0BE74529231B82007A1687 /* GoogleService-Info-Dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Dev.plist"; sourceTree = "<group>"; };
 		9A2367A928ED3C1C00D43F9D /* cooking-app-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cooking-app-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2367AC28ED3C1C00D43F9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A2367AE28ED3C1C00D43F9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,18 +64,18 @@
 		9A2367C928ED3C1D00D43F9D /* cooking-app-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cooking-app-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2367CD28ED3C1D00D43F9D /* EcoRecipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoRecipeUITests.swift; sourceTree = "<group>"; };
 		9A2367CF28ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoRecipeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9A2A387C292153E7009DC708 /* GoogleService-Info-Dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Dev.plist"; sourceTree = "<group>"; };
 		9A4037E12903D7B900C2C090 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9A4037E32904078600C2C090 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		9A41E45F2919F4F100C8CA07 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9A41E461291A017100C8CA07 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9A41E463291AA8E400C8CA07 /* cooking-app-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "cooking-app-iOS.entitlements"; sourceTree = "<group>"; };
 		9A58E480290C01C6006B0118 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		9AAF2BAC2922A004009A1080 /* GoogleService-Info-Rls.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Rls.plist"; sourceTree = "<group>"; };
+		9A86EFC429232D9B00EE12BF /* GoogleService-Info-Rls.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Rls.plist"; sourceTree = "<group>"; };
 		9AB65AFD290FA8CA007DFACA /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		9AB65AFF290FA8F1007DFACA /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		9ABE2ABC29137C1800228F59 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		9ACA44C129235CE40084C663 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				9A4037E32904078600C2C090 /* DetailTableViewCell.swift */,
 				9AB65AFD290FA8CA007DFACA /* FavoriteViewController.swift */,
 				9AB65AFF290FA8F1007DFACA /* FavoriteTableViewCell.swift */,
+				9ACA44C129235CE40084C663 /* SettingsViewController.swift */,
 				9AAF2BAB29229F7F009A1080 /* Firebase */,
 				9A2367B528ED3C1D00D43F9D /* Assets.xcassets */,
 				9A2367B728ED3C1D00D43F9D /* LaunchScreen.storyboard */,
@@ -168,8 +171,8 @@
 		9AAF2BAB29229F7F009A1080 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				9AAF2BAC2922A004009A1080 /* GoogleService-Info-Rls.plist */,
-				9A2A387C292153E7009DC708 /* GoogleService-Info-Dev.plist */,
+				9A86EFC429232D9B00EE12BF /* GoogleService-Info-Rls.plist */,
+				9A0BE74529231B82007A1687 /* GoogleService-Info-Dev.plist */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -287,10 +290,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A2367B928ED3C1D00D43F9D /* LaunchScreen.storyboard in Resources */,
+				9A86EFC529232D9B00EE12BF /* GoogleService-Info-Rls.plist in Resources */,
+				9A0BE74629231B82007A1687 /* GoogleService-Info-Dev.plist in Resources */,
 				9A2367B628ED3C1D00D43F9D /* Assets.xcassets in Resources */,
-				9A2A387D292153E7009DC708 /* GoogleService-Info-Dev.plist in Resources */,
 				9A41E4602919F4F200C8CA07 /* Login.storyboard in Resources */,
-				9AAF2BAD2922A004009A1080 /* GoogleService-Info-Rls.plist in Resources */,
 				9A2367B428ED3C1C00D43F9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +351,7 @@
 				9AB65AFE290FA8CA007DFACA /* FavoriteViewController.swift in Sources */,
 				9A2367AF28ED3C1C00D43F9D /* SceneDelegate.swift in Sources */,
 				9A41E462291A017100C8CA07 /* LoginViewController.swift in Sources */,
+				9ACA44C229235CE50084C663 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,7 +534,7 @@
 				DEVELOPMENT_TEAM = WCTHZ894XR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "cooking-app-iOS/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "에코레시피";
+				INFOPLIST_KEY_CFBundleDisplayName = "에코레시피-rls";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
@@ -560,7 +564,7 @@
 				DEVELOPMENT_TEAM = WCTHZ894XR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "cooking-app-iOS/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "에코레시피";
+				INFOPLIST_KEY_CFBundleDisplayName = "에코레시피-rls";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o5o-dC-zDX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -391,18 +391,64 @@
         <!--Settings-->
         <scene sceneID="bc4-FT-cBh">
             <objects>
-                <viewController id="Gsd-fT-Aen" sceneMemberID="viewController">
+                <viewController id="Gsd-fT-Aen" customClass="SettingsViewController" customModule="cooking_app_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Brv-Yr-bTI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEQ-rb-Mfw">
+                                <rect key="frame" x="71.5" y="77" width="271" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="0Os-9d-9YO"/>
+                                    <constraint firstAttribute="width" constant="271" id="pQ1-3X-KhG"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="로그인 / 회원가입">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="AppleSDGothicNeo-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="OgH-bS-RBc" kind="presentation" id="SC3-W2-Bjm"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="EFY-42-NUK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TEQ-rb-Mfw" firstAttribute="centerX" secondItem="Brv-Yr-bTI" secondAttribute="centerX" id="biM-uv-9Ip"/>
+                            <constraint firstItem="TEQ-rb-Mfw" firstAttribute="top" secondItem="EFY-42-NUK" secondAttribute="top" constant="33" id="vdk-sL-MYP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gearshape.circle.fill" catalog="system" selectedImage="gearshape.circle.fill" id="2XK-c8-0Fu"/>
+                    <connections>
+                        <outlet property="loginBtn" destination="TEQ-rb-Mfw" id="GPV-3O-4ec"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAl-zm-TQb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2329" y="-135"/>
+            <point key="canvasLocation" x="2328.985507246377" y="-135.26785714285714"/>
+        </scene>
+        <!--LOGINNAV-->
+        <scene sceneID="9pQ-9n-l6F">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="LOGINNAV" id="OgH-bS-RBc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bgr-Qv-4bt"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLS-ee-Klf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2852" y="-370"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="W6j-cv-jff">
@@ -422,7 +468,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJu-lh-oCU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16" y="-52"/>
+            <point key="canvasLocation" x="107" y="-55"/>
         </scene>
         <!--Search Recipes-->
         <scene sceneID="rpj-9N-12h">
@@ -473,6 +519,9 @@
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
