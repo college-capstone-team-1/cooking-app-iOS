@@ -6,29 +6,50 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var logoutBtn: UIButton!
+    @IBOutlet weak var txtEmail: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //로그인버튼 테두리 굵기
+        //버튼 테두리 굵기
         loginBtn.layer.borderWidth = 2
-        //로그인버튼 테두리 색상
+        logoutBtn.layer.borderWidth = 2
+        //버튼 테두리 색상
         loginBtn.layer.borderColor = UIColor.black.cgColor
+        logoutBtn.layer.borderColor = UIColor.blue.cgColor
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func logoutBtn(_ sender: UIButton) {
+        
+        txtEmail.text = "로그인이 필요합니다"
+        try? Auth.auth().signOut()
     }
-    */
+    
+    @IBAction func loginBtn(_ sender: Any) {
+        
+        let LoginSB = UIStoryboard(name: "Login", bundle: nil)
+        let LoginNVC = LoginSB.instantiateViewController(withIdentifier: "LOGINNAV")
+        
+        self.present(LoginNVC, animated: true)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //화면이 다시 나타날 때 마다 로그인상태 체크
+        if let user = Auth.auth().currentUser {
+            txtEmail.text = user.email
+        }
+        else{
+            txtEmail.text = "로그인이 필요합니다"
+        }
+    }
 
 }

@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions,completionHandler: {_, _ in })
         application.registerForRemoteNotifications()
+        
 
         return true
     }

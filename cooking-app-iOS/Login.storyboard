@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="LoginStoryboard" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="cooking_app_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="LoginViewController" customModule="cooking_app_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="103.79464285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Email View Controller-->
         <scene sceneID="eIs-YX-mNo">
             <objects>
-                <viewController id="wyL-u5-NcR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AA" id="wyL-u5-NcR" customClass="LoginEmailViewController" customModule="cooking_app_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gUW-TY-iOD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,6 +153,9 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="로그인"/>
+                                <connections>
+                                    <action selector="loginBtn:" destination="wyL-u5-NcR" eventType="touchUpInside" id="wWm-ta-DlE"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKA-7e-dVU">
                                 <rect key="frame" x="155" y="146" width="104" height="48"/>
@@ -194,6 +197,10 @@
                     <navigationItem key="navigationItem" id="rol-Q2-H7h">
                         <barButtonItem key="backBarButtonItem" title="로그인" id="4Np-1F-WLC"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="txtEmail" destination="Tju-Kb-peY" id="cfG-6p-9Yy"/>
+                        <outlet property="txtPw" destination="596-pF-Tes" id="Km1-UW-JMh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zDN-X9-6Jk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

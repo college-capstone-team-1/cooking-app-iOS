@@ -397,7 +397,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEQ-rb-Mfw">
-                                <rect key="frame" x="71.5" y="77" width="271" height="57"/>
+                                <rect key="frame" x="71.5" y="124" width="271" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="0Os-9d-9YO"/>
                                     <constraint firstAttribute="width" constant="271" id="pQ1-3X-KhG"/>
@@ -420,20 +420,61 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="loginBtn:" destination="Gsd-fT-Aen" eventType="touchUpInside" id="WYG-Jf-IeW"/>
                                     <segue destination="OgH-bS-RBc" kind="presentation" id="SC3-W2-Bjm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인이 필요합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayf-tF-b3q">
+                                <rect key="frame" x="107" y="69" width="200.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHs-8O-zag">
+                                <rect key="frame" x="71.5" y="211" width="271" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="dqT-EI-jnm"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="로그아웃">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="AppleSDGothicNeo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logoutBtn:" destination="Gsd-fT-Aen" eventType="touchUpInside" id="d3X-Ik-bqV"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EFY-42-NUK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="UHs-8O-zag" firstAttribute="leading" secondItem="TEQ-rb-Mfw" secondAttribute="leading" id="60z-We-gej"/>
+                            <constraint firstItem="ayf-tF-b3q" firstAttribute="top" secondItem="EFY-42-NUK" secondAttribute="top" constant="25" id="BFy-QU-mQX"/>
+                            <constraint firstItem="TEQ-rb-Mfw" firstAttribute="trailing" secondItem="UHs-8O-zag" secondAttribute="trailing" id="XaG-8Y-vpK"/>
+                            <constraint firstItem="TEQ-rb-Mfw" firstAttribute="top" secondItem="ayf-tF-b3q" secondAttribute="bottom" constant="25" id="bAK-Rm-BYo"/>
                             <constraint firstItem="TEQ-rb-Mfw" firstAttribute="centerX" secondItem="Brv-Yr-bTI" secondAttribute="centerX" id="biM-uv-9Ip"/>
-                            <constraint firstItem="TEQ-rb-Mfw" firstAttribute="top" secondItem="EFY-42-NUK" secondAttribute="top" constant="33" id="vdk-sL-MYP"/>
+                            <constraint firstItem="UHs-8O-zag" firstAttribute="top" secondItem="TEQ-rb-Mfw" secondAttribute="bottom" constant="30" id="jH1-lr-uwd"/>
+                            <constraint firstItem="ayf-tF-b3q" firstAttribute="centerX" secondItem="Brv-Yr-bTI" secondAttribute="centerX" id="tbf-LD-hmY"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gearshape.circle.fill" catalog="system" selectedImage="gearshape.circle.fill" id="2XK-c8-0Fu"/>
                     <connections>
                         <outlet property="loginBtn" destination="TEQ-rb-Mfw" id="GPV-3O-4ec"/>
+                        <outlet property="logoutBtn" destination="UHs-8O-zag" id="iLN-eu-RbU"/>
+                        <outlet property="txtEmail" destination="ayf-tF-b3q" id="yFA-yo-H0q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAl-zm-TQb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
