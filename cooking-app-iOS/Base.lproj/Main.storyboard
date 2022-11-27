@@ -388,7 +388,7 @@
             </objects>
             <point key="canvasLocation" x="1675" y="798"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="bc4-FT-cBh">
             <objects>
                 <viewController id="Gsd-fT-Aen" customClass="SettingsViewController" customModule="cooking_app_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -397,7 +397,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEQ-rb-Mfw">
-                                <rect key="frame" x="71.5" y="124" width="271" height="57"/>
+                                <rect key="frame" x="71.5" y="168" width="271" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="0Os-9d-9YO"/>
                                     <constraint firstAttribute="width" constant="271" id="pQ1-3X-KhG"/>
@@ -424,61 +424,30 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인이 필요합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayf-tF-b3q">
-                                <rect key="frame" x="107" y="69" width="200.5" height="30"/>
+                                <rect key="frame" x="107" y="113" width="200.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHs-8O-zag">
-                                <rect key="frame" x="71.5" y="211" width="271" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="dqT-EI-jnm"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="로그아웃">
-                                            <attributes>
-                                                <font key="NSFont" size="24" name="AppleSDGothicNeo-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="logoutBtn:" destination="Gsd-fT-Aen" eventType="touchUpInside" id="d3X-Ik-bqV"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EFY-42-NUK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="UHs-8O-zag" firstAttribute="leading" secondItem="TEQ-rb-Mfw" secondAttribute="leading" id="60z-We-gej"/>
                             <constraint firstItem="ayf-tF-b3q" firstAttribute="top" secondItem="EFY-42-NUK" secondAttribute="top" constant="25" id="BFy-QU-mQX"/>
-                            <constraint firstItem="TEQ-rb-Mfw" firstAttribute="trailing" secondItem="UHs-8O-zag" secondAttribute="trailing" id="XaG-8Y-vpK"/>
                             <constraint firstItem="TEQ-rb-Mfw" firstAttribute="top" secondItem="ayf-tF-b3q" secondAttribute="bottom" constant="25" id="bAK-Rm-BYo"/>
                             <constraint firstItem="TEQ-rb-Mfw" firstAttribute="centerX" secondItem="Brv-Yr-bTI" secondAttribute="centerX" id="biM-uv-9Ip"/>
-                            <constraint firstItem="UHs-8O-zag" firstAttribute="top" secondItem="TEQ-rb-Mfw" secondAttribute="bottom" constant="30" id="jH1-lr-uwd"/>
                             <constraint firstItem="ayf-tF-b3q" firstAttribute="centerX" secondItem="Brv-Yr-bTI" secondAttribute="centerX" id="tbf-LD-hmY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.circle.fill" catalog="system" selectedImage="gearshape.circle.fill" id="2XK-c8-0Fu"/>
+                    <navigationItem key="navigationItem" id="UbS-29-gdp"/>
                     <connections>
                         <outlet property="loginBtn" destination="TEQ-rb-Mfw" id="GPV-3O-4ec"/>
-                        <outlet property="logoutBtn" destination="UHs-8O-zag" id="iLN-eu-RbU"/>
                         <outlet property="txtEmail" destination="ayf-tF-b3q" id="yFA-yo-H0q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAl-zm-TQb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2328.985507246377" y="-135.26785714285714"/>
+            <point key="canvasLocation" x="3239.130434782609" y="-135.26785714285714"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="W6j-cv-jff">
@@ -493,7 +462,7 @@
                     <connections>
                         <segue destination="ioY-QI-hWD" kind="relationship" relationship="viewControllers" id="NIZ-Sz-RQr"/>
                         <segue destination="rPD-2v-3sL" kind="relationship" relationship="viewControllers" id="HrO-Dq-ZeW"/>
-                        <segue destination="Gsd-fT-Aen" kind="relationship" relationship="viewControllers" id="abU-hL-nqS"/>
+                        <segue destination="qU5-SJ-FZ6" kind="relationship" relationship="viewControllers" id="abU-hL-nqS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJu-lh-oCU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -539,6 +508,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lg-PQ-fKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1623" y="11"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="jbf-ev-4ca">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qU5-SJ-FZ6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.circle.fill" catalog="system" selectedImage="gearshape.circle.fill" id="2XK-c8-0Fu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uqt-D7-mxR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gsd-fT-Aen" kind="relationship" relationship="rootViewController" id="yxq-1y-Ckl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rXN-1J-ZYa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2328.985507246377" y="-135.26785714285714"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
