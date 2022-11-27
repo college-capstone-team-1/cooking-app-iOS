@@ -421,7 +421,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginBtn:" destination="Gsd-fT-Aen" eventType="touchUpInside" id="WYG-Jf-IeW"/>
-                                    <segue destination="OgH-bS-RBc" kind="presentation" id="SC3-W2-Bjm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인이 필요합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayf-tF-b3q">
@@ -553,7 +552,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6RV-uC-1le"/>
+        <segue reference="xvG-2Y-psU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape.circle.fill" catalog="system" width="128" height="121"/>

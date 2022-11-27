@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //네이베이션바 제거, 스와이프 제스쳐는 가능
-        self.navigationController?.navigationBar.isHidden = true;
+        //self.navigationController?.navigationBar.isHidden = true;
         
  
     }

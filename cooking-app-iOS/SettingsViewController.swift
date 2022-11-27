@@ -37,19 +37,31 @@ class SettingsViewController: UIViewController {
         
         let LoginSB = UIStoryboard(name: "Login", bundle: nil)
         let LoginNVC = LoginSB.instantiateViewController(withIdentifier: "LOGINNAV")
-        
+        LoginNVC.modalPresentationStyle = .fullScreen
         self.present(LoginNVC, animated: true)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         //화면이 다시 나타날 때 마다 로그인상태 체크
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("#######")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if let user = Auth.auth().currentUser {
             txtEmail.text = user.email
         }
         else{
             txtEmail.text = "로그인이 필요합니다"
         }
+        
+        print("@@@@@@")
     }
+    
+    
 
 }
