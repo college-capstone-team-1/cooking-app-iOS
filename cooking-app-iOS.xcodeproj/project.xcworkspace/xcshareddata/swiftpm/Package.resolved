@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk",
         "state": {
           "branch": "master",
-          "revision": "127cab962e25fc2e32f1f1e899eb0451a4507650",
+          "revision": "68628ef4e3b77aa61659c08912fb57fb3cc21cf2",
           "version": null
         }
       },
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/google/gtm-session-fetcher.git",
         "state": {
           "branch": null,
-          "revision": "5ccda3981422a84186387dbb763ba739178b529c",
-          "version": "2.3.0"
+          "revision": "efda500b6d9858d38a76dbfbfa396bd644692e4a",
+          "version": "3.0.0"
         }
       },
       {

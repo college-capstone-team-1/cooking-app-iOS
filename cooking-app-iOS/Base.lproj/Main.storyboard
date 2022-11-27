@@ -480,16 +480,6 @@
             </objects>
             <point key="canvasLocation" x="2328.985507246377" y="-135.26785714285714"/>
         </scene>
-        <!--LOGINNAV-->
-        <scene sceneID="9pQ-9n-l6F">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="LOGINNAV" id="OgH-bS-RBc" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="bgr-Qv-4bt"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jLS-ee-Klf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2852" y="-370"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="W6j-cv-jff">
             <objects>
@@ -552,7 +542,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xvG-2Y-psU"/>
+        <segue reference="6RV-uC-1le"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape.circle.fill" catalog="system" width="128" height="121"/>
