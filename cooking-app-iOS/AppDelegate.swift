@@ -10,11 +10,12 @@ import CoreData
 import Firebase
 import FirebaseMessaging
 import UserNotifications
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    public static var user: GIDGoogleUser!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -26,6 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions,completionHandler: {_, _ in })
         application.registerForRemoteNotifications()
         
+        //구글로그인 상태 복원
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+          if error != nil || user == nil {
+            print("구글 로그아웃 상태")
+          } else {
+            print("구글 로그인 상태")
+          }
+        }
 
         return true
     }
@@ -89,6 +98,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func application(
+        _ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:] ) -> Bool {
+        var handled: Bool
+
+        handled = GIDSignIn.sharedInstance.handle(url)
+
+        if handled {
+            return true
+        }
+        return false
     }
 }
 

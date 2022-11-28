@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
 class SettingsViewController: UIViewController {
 
@@ -33,12 +34,16 @@ class SettingsViewController: UIViewController {
             
             //로그아웃
             try? Auth.auth().signOut()
+            //구글 로그아웃
+            GIDSignIn.sharedInstance.signOut()
+            
             //로그인버튼 변경
             txtEmail.text = "로그인이 필요합니다"
             loginBtn.layer.borderColor = UIColor.black.cgColor
             loginBtn.setTitle("로그인 / 회원가입", for: .normal)
             
-        } else{
+        }
+        else{
             //로그아웃 상태
             
             //로그인페이지로 이동
@@ -67,7 +72,4 @@ class SettingsViewController: UIViewController {
             loginBtn.setTitle("로그인 / 회원가입", for: .normal)
         }
     }
-    
-    
-
 }

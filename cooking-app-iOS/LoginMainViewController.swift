@@ -7,8 +7,9 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
-class LoginMainViewController: UIViewController, UINavigationControllerDelegate {
+class LoginMainViewController: UIViewController {
 
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPw: UITextField!
@@ -41,20 +42,64 @@ class LoginMainViewController: UIViewController, UINavigationControllerDelegate 
         
         Auth.auth().signIn(withEmail: self.txtEmail.text!, password: self.txtPw.text!) { (result, error) in
             //에러출력
-            if let error = error {
-                print("ERROR: \(error.localizedDescription)")
+            guard error == nil else {
+                print("Email Auth ERROR: \(error?.localizedDescription)")
+                return
             }
             
-            //로그인 확인
+            //로그인상태 확인
             guard let user = result?.user else {
                 print("Login Fail")
                 return
             }
-            print("Login Successk: \(user.email)")
+            print("Login Success: \(user.email)")
             
             //모달 닫기
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+    @IBAction func googleLogin(_ sender: UIButton) {
+        
+        //구글 로그인
+        startGoogleLogin()
+    }
+    
+    func startGoogleLogin(){
+        let googleClientId = "845968429936-onvrmj608gahso97munufkr3trm57824.apps.googleusercontent.com"
+        let signInConfig = GIDConfiguration.init(clientID: googleClientId)
 
+        let accessToken = GIDSignIn.sharedInstance.currentUser?.authentication.accessToken
+        
+        if accessToken == nil {
+            
+            GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { (userInfo, error) in
+                if error != nil {
+
+                } else {
+                    //구글로그인 성공 판단
+                    guard let authentication = userInfo?.authentication else { return }
+                    //인증서 발행
+                    let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken!, accessToken: authentication.accessToken)
+                    print("credential:", credential)
+                    
+                    let userId = userInfo?.userID
+                    let accessToken = userInfo?.authentication.accessToken
+                    
+                    //파이어베이스 인증
+                    Auth.auth().signIn(with: credential) { result, error in
+                        
+                        //파이어베이스 로그인 실패
+                        guard error == nil else{
+                            print("Google Auth Error:", error?.localizedDescription)
+                            GIDSignIn.sharedInstance.signOut()
+                            return
+                        }
+                        
+                        print("Google Auth: \((result?.user.email)!)")
+                    }
+                }
+            }
+        }
+    }
 }
