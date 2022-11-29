@@ -222,7 +222,7 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     //레시피 리스트 가져옴
     func getRecipeData(Ingredients:String? = nil, startIndex:Int = 1, endIndex:Int = 5){
         
-        var urlKorString = "https://openapi.foodsafetykorea.go.kr/api/aa2b9872939a45888fd3/COOKRCP01/json/\(startIndex)/\(endIndex)"
+        var urlKorString = "https://openapi.foodsafetykorea.go.kr/api/\(Bundle.main.Food_Recipe_API_Key)/COOKRCP01/json/\(startIndex)/\(endIndex)"
         
         if let search = Ingredients, search != "" {
             urlKorString += "/RCP_PARTS_DTLS=\(search)"
@@ -365,5 +365,19 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     
 }
 
+extension Bundle {
+    
+    var Food_Recipe_API_Key: String{
+        guard let file = self.path(forResource: "APIKeys", ofType: "plist") else{ return "" }
+        
+        guard let resource = NSDictionary(contentsOfFile: file) else { return "" }
+        
+        guard let id = resource["Food_Recipe_API"] as? String else {
+            fatalError("Food Recipe API Key Not Found")
+        }
+        
+        return id
+    }
+}
 
 
