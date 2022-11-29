@@ -2,7 +2,7 @@ cooking-app-iOSTests/
 cooking-app-iOSUITests/
 cooking-app-iOS/Firebase/
 !cooking-app-iOS/Firebase/.gitkeep
-cooking-app-iOS/APIKeys.plist
+
 *.xcuserstate
 
 # Xcode per-user config
