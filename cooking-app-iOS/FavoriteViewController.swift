@@ -16,18 +16,18 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         
         return app.persistentContainer.viewContext
     }
-    
+    //로컬저장소값을 String으로 fetch하여 저장할 변수
     struct Recipe{
-        let RCP_SEQ:String?        //일련번호
+        let RCP_SEQ:String?            //일련번호
         let RCP_NM:String?          //메뉴명
         let RCP_WAY2:String?        //조리방법
         let RCP_PAT2:String?        //요리종류
-        let INFO_WGT:String?        //중량(1인분)
-        let INFO_ENG:String?        //열량(1인분)
-        let INFO_CAR:String?        //탄수화물
-        let INFO_PRO:String?        //단백질
-        let INFO_FAT:String?        //지방
-        let INFO_NA:String?         //나트륨
+        let INFO_WGT:String?           //중량(1인분)
+        let INFO_ENG:String?           //열량(1인분)
+        let INFO_CAR:String?           //탄수화물
+        let INFO_PRO:String?           //단백질
+        let INFO_FAT:String?           //지방
+        let INFO_NA:String?            //나트륨
         let HASH_TAG:String?        //해쉬태그
         let ATT_FILE_NO_MAIN:String?//이미지경로(소)
         let RCP_PARTS_DTLS:String?  //재료정보
@@ -149,7 +149,6 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         guard let dest = segue.destination as? DetailViewController else {return}
         let myIndexPath = favoriteTableView.indexPathForSelectedRow!
         let row = myIndexPath.row
-        
                             //일련번호
         dest.recipeTuple = (seq:recipeData[row]?.RCP_SEQ,
                             //음식 이름
@@ -203,18 +202,18 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
 
             
             for favorite in favorites{
-                
-                let recipe:Recipe = Recipe(RCP_SEQ: favorite.value(forKey: "rcp_seq") as? String,          //일련번호
-                                           RCP_NM: favorite.value(forKey: "rcp_nm") as? String,            //메뉴명
-                                           RCP_WAY2: favorite.value(forKey: "rcp_way2") as? String,        //조리방법
-                                           RCP_PAT2: favorite.value(forKey: "rcp_pat2") as? String,        //요리종류
-                                           INFO_WGT: favorite.value(forKey: "info_wgt") as? String,        //중량(1인분)
-                                           INFO_ENG: favorite.value(forKey: "info_eng") as? String,        //열량(1인분)
-                                           INFO_CAR: favorite.value(forKey: "info_car") as? String,        //탄수화물
-                                           INFO_PRO: favorite.value(forKey: "info_pro") as? String,        //단백질
-                                           INFO_FAT: favorite.value(forKey: "info_fat") as? String,        //지방
-                                           INFO_NA: favorite.value(forKey: "info_na") as? String,          //나트륨
-                                           HASH_TAG: favorite.value(forKey: "hash_tag") as? String,        //해쉬태그
+                //로컬저장소에 String으로 저장 후 String으로 fetch
+                let recipe:Recipe = Recipe(RCP_SEQ: favorite.value(forKey: "rcp_seq") as! String,              //일련번호
+                                           RCP_NM: favorite.value(forKey: "rcp_nm") as? String,             //메뉴명
+                                           RCP_WAY2: favorite.value(forKey: "rcp_way2") as? String,         //조리방법
+                                           RCP_PAT2: favorite.value(forKey: "rcp_pat2") as? String,         //요리종류
+                                           INFO_WGT: favorite.value(forKey: "info_wgt") as? String,            //중량(1인분)
+                                           INFO_ENG: favorite.value(forKey: "info_eng") as? String,            //열량(1인분)
+                                           INFO_CAR: favorite.value(forKey: "info_car") as? String,            //탄수화물
+                                           INFO_PRO: favorite.value(forKey: "info_pro") as? String,            //단백질
+                                           INFO_FAT: favorite.value(forKey: "info_fat") as? String,            //지방
+                                           INFO_NA: favorite.value(forKey: "info_na") as? String,              //나트륨
+                                           HASH_TAG: favorite.value(forKey: "hash_tag") as? String,         //해쉬태그
                                            ATT_FILE_NO_MAIN: favorite.value(forKey: "att_file_no_main") as? String,//이미지경로(소)
                                            RCP_PARTS_DTLS: favorite.value(forKey: "rcp_parts_dtls") as? String,//재료정보
                                            MANUAL01: favorite.value(forKey: "manual01") as? String,        //만드는법_01

@@ -15,91 +15,86 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     
     
     struct RCP:Codable{
-        var COOKRCP01:CookRCP01
+        //var COOKRCP01:CookRCP01
+        var meta:RCPMeta
+        var values:[RCPValue?]
     }
     
-    struct CookRCP01:Codable{
-        var total_count:String?
-        var row:[Row?] = [Row]()    //검색결과가 없을 때 리턴되지 않음
-        var RESULT:Result?
-        
-        init(from decoder: Decoder) throws{
-            let values = try decoder.container(keyedBy: CodingKeys.self)
-            total_count = (try? values.decode(String.self, forKey: .total_count)) ?? ""
-            RESULT = try? values.decodeIfPresent(Result.self, forKey: .RESULT)
-            row = try values.decodeIfPresent([Row?].self, forKey: .row) ?? [nil]
-
-            //self.thumbnailURL = try container.decodeIfPresent(String.self, forKey: .thumnailURL)
-        }
+    struct RCPMeta:Codable{
+        var end:Bool?
+        var total_count:Int?
+        var pageable_count:Int?
     }
     
-    struct Row:Codable{
-        let RCP_SEQ:String?         //일련번호
-        let RCP_NM:String?          //메뉴명
-        let RCP_WAY2:String?        //조리방법
-        let RCP_PAT2:String?        //요리종류
-        let INFO_WGT:String?        //중량(1인분)
-        let INFO_ENG:String?        //열량(1인분)
-        let INFO_CAR:String?        //탄수화물
-        let INFO_PRO:String?        //단백질
-        let INFO_FAT:String?        //지방
-        let INFO_NA:String?         //나트륨
-        let HASH_TAG:String?        //해쉬태그
-        let ATT_FILE_NO_MAIN:String?//이미지경로(소)
-        let ATT_FILE_NO_MK:String?  //이미지경로(대)
-        let RCP_PARTS_DTLS:String?  //재료정보
-        let MANUAL01:String?        //만드는법_01
-        let MANUAL_IMG01:String?    //만드는법_이미지_01
-        let MANUAL02:String?        //만드는법_02
-        let MANUAL_IMG02:String?    //만드는법_이미지_02
-        let MANUAL03:String?
-        let MANUAL_IMG03:String?
-        let MANUAL04:String?
-        let MANUAL_IMG04:String?
-        let MANUAL05:String?
-        let MANUAL_IMG05:String?
-        let MANUAL06:String?
-        let MANUAL_IMG06:String?
-        let MANUAL07:String?
-        let MANUAL_IMG07:String?
-        let MANUAL08:String?
-        let MANUAL_IMG08:String?
-        let MANUAL09:String?
-        let MANUAL_IMG09:String?
-        let MANUAL10:String?        //만드는법_10
-        let MANUAL_IMG10:String?    //만드는법_이미지_10
-        let MANUAL11:String?
-        let MANUAL_IMG11:String?
-        let MANUAL12:String?
-        let MANUAL_IMG12:String?
-        let MANUAL13:String?
-        let MANUAL_IMG13:String?
-        let MANUAL14:String?
-        let MANUAL_IMG14:String?
-        let MANUAL15:String?
-        let MANUAL_IMG15:String?
-        let MANUAL16:String?
-        let MANUAL_IMG16:String?
-        let MANUAL17:String?
-        let MANUAL_IMG17:String?
-        let MANUAL18:String?
-        let MANUAL_IMG18:String?
-        let MANUAL19:String?
-        let MANUAL_IMG19:String?
-        let MANUAL20:String?
-        let MANUAL_IMG20:String?
-    }
-    
-    struct Result:Codable{
-        let MSG:String
-        let CODE:String
+    struct RCPValue:Codable{
+        var id:Int?
+        let rcpSeq:Int?         //일련번호
+        let rcpNm:String?          //메뉴명
+        let rcpWay2:String?        //조리방법
+        let rcpPat2:String?        //요리종류
+        let rcpPartsDtls:String?  //재료정보
+        let hashTag:String?       //해시태그
+        let infoWgt:Double?       //중량(1인분)
+        let infoEng:Double?       //열량(1인분)
+        let infoCar:Double?       //탄수화물
+        let infoPro:Double?       //단백질
+        let infoFat:Double?       //지방
+        let infoNa:Double?         //나트륨
+        let attFileNoMain:String?//이미지경로(소)
+        let attFileNoMk:String?  //이미지경로(대)
+        let manual01:String?        //만드는법_01
+        let manual02:String?        //만드는법_02
+        let manual03:String?        //만드는법_03
+        let manual04:String?        //만드는법_04
+        let manual05:String?        //만드는법_05
+        let manual06:String?        //만드는법_06
+        let manual07:String?        //만드는법_07
+        let manual08:String?        //만드는법_08
+        let manual09:String?        //만드는법_09
+        let manual10:String?        //만드는법_10
+        let manual11:String?        //만드는법_11
+        let manual12:String?        //만드는법_12
+        let manual13:String?        //만드는법_13
+        let manual14:String?        //만드는법_14
+        let manual15:String?        //만드는법_15
+        let manual16:String?        //만드는법_16
+        let manual17:String?        //만드는법_17
+        let manual18:String?        //만드는법_18
+        let manual19:String?        //만드는법_19
+        let manual20:String?        //만드는법_20
+        let manualImg01:String?     //만드는법_이미지_01
+        let manualImg02:String?     //만드는법_이미지_02
+        let manualImg03:String?     //만드는법_이미지_03
+        let manualImg04:String?     //만드는법_이미지_04
+        let manualImg05:String?     //만드는법_이미지_05
+        let manualImg06:String?     //만드는법_이미지_06
+        let manualImg07:String?     //만드는법_이미지_07
+        let manualImg08:String?     //만드는법_이미지_08
+        let manualImg09:String?     //만드는법_이미지_09
+        let manualImg10:String?     //만드는법_이미지_10
+        let manualImg11:String?     //만드는법_이미지_11
+        let manualImg12:String?     //만드는법_이미지_12
+        let manualImg13:String?     //만드는법_이미지_13
+        let manualImg14:String?     //만드는법_이미지_14
+        let manualImg15:String?     //만드는법_이미지_15
+        let manualImg16:String?     //만드는법_이미지_16
+        let manualImg17:String?     //만드는법_이미지_17
+        let manualImg18:String?     //만드는법_이미지_18
+        let manualImg19:String?     //만드는법_이미지_19
+        let manualImg20:String?     //만드는법_이미지_20
     }
     
     var recipeData:RCP? = nil
     var startIndex:Int = 1
     var endIndex:Int = 5
-    private var currentPage = 1
+    private
     var keyword:String?
+    //호출해야할 api 페이지
+    var recipePage = 1
+    //현재 api 페이지
+    var currentPage = 0
+    //api로 한번에 받아올 레시피 개수
+    let recipeSize = 5
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,7 +137,7 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.recipeData?.COOKRCP01.row.count ?? 0  //페이지당 5개
+        return self.recipeData?.values.count ?? 0  //페이지당 5개
         
     }
     
@@ -150,14 +145,14 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainTableViewCell", for: indexPath) as! MainTableViewCell
         
-        cell.rcpName.text = self.recipeData?.COOKRCP01.row[indexPath.row]?.RCP_NM
+        cell.rcpName.text = self.recipeData?.values[indexPath.row]?.rcpNm
         
         
         //서버에 값이 없으면 ""을 전달하므로 nil이 아니라 옵셔널("")값이 저장됨
-        if let imgString = self.recipeData?.COOKRCP01.row[indexPath.row]?.ATT_FILE_NO_MAIN, imgString != "" {
+        if let imgString = self.recipeData?.values[indexPath.row]?.attFileNoMain, imgString != "" {
             DispatchQueue.global().async {
                 
-                let imgURL = URL(string: self.recipeData?.COOKRCP01.row[indexPath.row]?.ATT_FILE_NO_MAIN! ?? "")
+                let imgURL = URL(string: self.recipeData?.values[indexPath.row]?.attFileNoMain! ?? "")
                 if let imgData = try? Data(contentsOf: imgURL!){
                     
                     DispatchQueue.main.async {
@@ -185,52 +180,52 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         guard let dest = segue.destination as? DetailViewController else {return}
         let myIndexPath = mainTableView.indexPathForSelectedRow!
         let row = myIndexPath.row
-        
+        //Int, Double 형태로 받아온 데이터를 모두 String으로 변환
                             //일련번호
-        dest.recipeTuple = (seq:recipeData?.COOKRCP01.row[row]?.RCP_SEQ,
+        dest.recipeTuple = (seq:String((recipeData?.values[row]?.rcpSeq)!),
                             //음식 이름
-                            name:recipeData?.COOKRCP01.row[row]?.RCP_NM,
+                            name:recipeData?.values[row]?.rcpNm,
                             //조리방식
-                            way2:recipeData?.COOKRCP01.row[row]?.RCP_WAY2,
+                            way2:recipeData?.values[row]?.rcpWay2,
                             //요리종류
-                            pat2:recipeData?.COOKRCP01.row[row]?.RCP_PAT2,
+                            pat2:recipeData?.values[row]?.rcpPat2,
                             //중량(1인분)
-                            wtg:recipeData?.COOKRCP01.row[row]?.INFO_WGT,
+                            wtg:String((recipeData?.values[row]?.infoWgt)!),
                             //열량(1인분)
-                            eng:recipeData?.COOKRCP01.row[row]?.INFO_ENG,
+                            eng:String((recipeData?.values[row]?.infoEng)!),
                             //탄수화물
-                            car:recipeData?.COOKRCP01.row[row]?.INFO_CAR,
+                            car:String((recipeData?.values[row]?.infoCar)!),
                             //단백질
-                            pro:recipeData?.COOKRCP01.row[row]?.INFO_PRO,
+                            pro:String((recipeData?.values[row]?.infoPro)!),
                             //지방
-                            fat:recipeData?.COOKRCP01.row[row]?.INFO_FAT,
+                            fat:String((recipeData?.values[row]?.infoFat)!),
                             //나트륨
-                            na:recipeData?.COOKRCP01.row[row]?.INFO_NA,
+                            na:String((recipeData?.values[row]?.infoNa)!),
                             //해쉬태그
-                            tag:recipeData?.COOKRCP01.row[row]?.HASH_TAG,
+                            tag:recipeData?.values[row]?.hashTag,
                             //음식 사진
-                            img:recipeData?.COOKRCP01.row[row]?.ATT_FILE_NO_MAIN,
+                            img:recipeData?.values[row]?.attFileNoMain,
                             //음식 재료
-                            dtls:recipeData?.COOKRCP01.row[row]?.RCP_PARTS_DTLS?.components(separatedBy: "\n").joined(),
+                            dtls:recipeData?.values[row]?.rcpPartsDtls?.components(separatedBy: "\n").joined(),
                             //만드는법 배열
-                            manual:[recipeData?.COOKRCP01.row[row]?.MANUAL01,recipeData?.COOKRCP01.row[row]?.MANUAL02,recipeData?.COOKRCP01.row[row]?.MANUAL03,recipeData?.COOKRCP01.row[row]?.MANUAL04,recipeData?.COOKRCP01.row[row]?.MANUAL05,recipeData?.COOKRCP01.row[row]?.MANUAL06,recipeData?.COOKRCP01.row[row]?.MANUAL07, recipeData?.COOKRCP01.row[row]?.MANUAL08, recipeData?.COOKRCP01.row[row]?.MANUAL09, recipeData?.COOKRCP01.row[row]?.MANUAL10].filter{ $0 != ""}.map{ Optional($0!.components(separatedBy: "\n").joined())},
+                            manual:[recipeData?.values[row]?.manual01,recipeData?.values[row]?.manual02,recipeData?.values[row]?.manual03,recipeData?.values[row]?.manual04,recipeData?.values[row]?.manual05,recipeData?.values[row]?.manual06,recipeData?.values[row]?.manual07, recipeData?.values[row]?.manual08, recipeData?.values[row]?.manual09, recipeData?.values[row]?.manual10].filter{ $0 != ""}.map{ Optional($0!.components(separatedBy: "\n").joined())},
                             //만드는법 사진링크 배열
-                            manualImg:[recipeData?.COOKRCP01.row[row]?.MANUAL_IMG01, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG02, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG03, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG04, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG05, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG06, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG07, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG08, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG09, recipeData?.COOKRCP01.row[row]?.MANUAL_IMG10].filter{ $0 != ""}
+                            manualImg:[recipeData?.values[row]?.manualImg01, recipeData?.values[row]?.manualImg02, recipeData?.values[row]?.manualImg03, recipeData?.values[row]?.manualImg04, recipeData?.values[row]?.manualImg05, recipeData?.values[row]?.manualImg06, recipeData?.values[row]?.manualImg07, recipeData?.values[row]?.manualImg08, recipeData?.values[row]?.manualImg09, recipeData?.values[row]?.manualImg10].filter{ $0 != ""}
                             )
     }
     
     //레시피 리스트 가져옴
-    func getRecipeData(Ingredients:String? = nil, startIndex:Int = 1, endIndex:Int = 5){
+    func getRecipeData(Ingredients:String? = nil, page:Int = 1, size:Int = 5){
         
-        var urlKorString = "https://openapi.foodsafetykorea.go.kr/api/\(Bundle.main.Food_Recipe_API_Key)/COOKRCP01/json/\(startIndex)/\(endIndex)"
-        
+        var urlKorString = "http://inndiary.xyz/api/v1/search/find-only?page=\(page)&size=\(size)"
         if let search = Ingredients, search != "" {
-            urlKorString += "/RCP_PARTS_DTLS=\(search)"
+            urlKorString += "&name=\(search)"
         }
-        
         let urlString = urlKorString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: urlString) else {return}
+//        let request = URLRequest(url:url)
+//        request.add
         let session = URLSession(configuration:.default)
         let task = session.dataTask(with: url){ (data, response, error) in
             
@@ -243,25 +238,24 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
             
             do {
                 let decodedData = try decoder.decode(RCP.self, from: data!)
-                
-                guard let searchCount = decodedData.COOKRCP01.total_count, searchCount != "0" else {
+                guard let searchCount = decodedData.meta.total_count, searchCount != 0 else {
 
                     self.showToast(message: "검색결과가 없습니다")
-                    print("Message: \(decodedData.COOKRCP01.RESULT?.MSG), CODE: \(decodedData.COOKRCP01.RESULT?.CODE)")
+                    print("total count: \(decodedData.meta.total_count), value:\(decodedData.values.count)")
                     return
                 }
-
-                self.currentPage = endIndex + 1
                 
-                //데이터가 없는경우
+                self.recipePage += 1
+                self.currentPage += 1
+                //불러온 데이터가 없는경우 값을 할당
                 if(self.recipeData == nil){
                     self.recipeData = decodedData
                 }
-                //저장한 데이터가 있는 경우
+                //불러온 데이터가 이미 있는 경우 배열에 append
                 else{
-                    self.recipeData?.COOKRCP01.total_count = decodedData.COOKRCP01.total_count
-                    self.recipeData?.COOKRCP01.row.append(contentsOf:decodedData.COOKRCP01.row)
-                    self.recipeData?.COOKRCP01.RESULT = decodedData.COOKRCP01.RESULT
+                    self.recipeData?.meta = decodedData.meta
+                    self.recipeData?.values.append(contentsOf:decodedData.values)
+                    //self.recipeData?.COOKRCP01.RESULT = decodedData.COOKRCP01.RESULT
                 }
                 
                 DispatchQueue.main.async{
@@ -270,7 +264,7 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
 
             }catch{
                 
-                print("Can not load recipe Data, check the error msg")
+                print("Can not load recipe Data")
                 print(error)
                 self.showToast(message: "검색결과가 없습니다")
             }
@@ -282,11 +276,10 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
 
     //데이터가 로드되기 전 스크롤링으로 마지막 인덱스에 여러번 도달하면 같은데이터를 여러번 요청하게되는 버그가 발생@@
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
-        
-        //API Start인덱스는 1부터 시작함
-        if indexPath.row + 2 == currentPage {
-            
-            getRecipeData(Ingredients:keyword, startIndex: currentPage, endIndex: currentPage + 4)
+
+        //index는 0부터 시작하므로 size - 1
+        if indexPath.row == currentPage * (recipeSize-1) {
+            getRecipeData(Ingredients:keyword, page: recipePage, size: recipeSize)
         }
     }
     

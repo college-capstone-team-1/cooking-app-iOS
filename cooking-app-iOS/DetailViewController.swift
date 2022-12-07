@@ -112,24 +112,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
-        
-        //cell.rcpName.text = self.recipeData?.COOKRCP01.row[indexPath.row]?.RCP_NM
-        
-        
-        //서버에 값이 없으면 ""을 전달하므로 nil이 아니라 옵셔널("")값이 저장됨
-//        if let imgString = self.recipeData?.COOKRCP01.row[indexPath.row]?.ATT_FILE_NO_MAIN, imgString != "" {
-//            DispatchQueue.global().async {
-//
-//                let imgURL = URL(string: self.recipeData?.COOKRCP01.row[indexPath.row]?.ATT_FILE_NO_MAIN! ?? "")
-//                if let imgData = try? Data(contentsOf: imgURL!){
-//
-//                    DispatchQueue.main.async {
-//                        cell.mainImg?.image = UIImage(data:imgData)
-//                    }
-//                }
-//            }
-//        }
-        
         return cell
     }
     
@@ -240,7 +222,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //즐겨찾기 버튼 활성화 여부확인 후 조작
     func favoriteButtonController(){
-        
         //이미 존재하는 레시피인지 검증
         let request = NSFetchRequest<NSManagedObject>(entityName: "Favorite")
         request.predicate = NSPredicate(format:"rcp_seq == %@", recipeTuple.seq!)
