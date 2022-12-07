@@ -203,7 +203,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
             
             for favorite in favorites{
                 //로컬저장소에 String으로 저장 후 String으로 fetch
-                let recipe:Recipe = Recipe(RCP_SEQ: favorite.value(forKey: "rcp_seq") as! String,              //일련번호
+                let recipe:Recipe = Recipe(RCP_SEQ: favorite.value(forKey: "rcp_seq") as? String,              //일련번호
                                            RCP_NM: favorite.value(forKey: "rcp_nm") as? String,             //메뉴명
                                            RCP_WAY2: favorite.value(forKey: "rcp_way2") as? String,         //조리방법
                                            RCP_PAT2: favorite.value(forKey: "rcp_pat2") as? String,         //요리종류
@@ -304,6 +304,9 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
    
 
     override func viewWillAppear(_ animated: Bool) {
+        //즐겨찾기 레시피 검색
+        searchFavoriteByKeyword()
+
         // correct the transparency bug for Tab bars
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()

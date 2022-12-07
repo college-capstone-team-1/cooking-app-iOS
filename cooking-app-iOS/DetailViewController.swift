@@ -232,13 +232,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             //검색결과가 있는 경우
             if result.count > 0 {
-                favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                favoriteButton.tintColor = .red
+                favoriteButton.setImage(UIImage(systemName: "tray.and.arrow.down.fill"), for: .normal)
+                favoriteButton.tintColor = UIColor(cgColor: CGColor(red: 78/255, green: 105/255, blue: 113/255, alpha: 1))
                 favoriteRecipe = true
             }
             //레시피 검색결과가 없는 경우
             else{
-                favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                favoriteButton.setImage(UIImage(systemName: "tray.and.arrow.down"), for: .normal)
                 favoriteButton.tintColor = .black
                 favoriteRecipe = false
             }
