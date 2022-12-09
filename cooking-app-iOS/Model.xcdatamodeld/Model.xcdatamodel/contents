@@ -56,7 +56,11 @@
         <attribute name="rcp_seq" optional="YES" attributeType="String"/>
         <attribute name="rcp_way2" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Like" representedClassName="Like" syncable="YES" codeGenerationType="class">
+        <attribute name="recipe_seq" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Favorite" positionX="360.09765625" positionY="-158.9609375" width="128" height="839"/>
+        <element name="Like" positionX="360" positionY="0" width="128" height="44"/>
     </elements>
 </model>

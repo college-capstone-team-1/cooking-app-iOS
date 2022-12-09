@@ -6,9 +6,17 @@
 //
 
 import UIKit
+import CoreData
+import FirebaseAuth
 
 class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSource, UITextFieldDelegate {
     
+    var context: NSManagedObjectContext{
+        
+        guard let app = UIApplication.shared.delegate as? AppDelegate else { fatalError() }
+        
+        return app.persistentContainer.viewContext
+    }
     
     @IBOutlet var searchField: UITextField!
     @IBOutlet weak var mainTableView: UITableView!
@@ -115,6 +123,9 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         searchField.leftViewMode = .always
         //Clear버튼 활성화
         searchField.clearButtonMode = .whileEditing
+        
+        //앱구동시 좋아요목록 초기화
+        initailizeLikeReciper()
         
         //레시피 검색
         getRecipeData()
@@ -303,7 +314,6 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
                 toastLabel.removeFromSuperview()
             })
         }
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
@@ -356,6 +366,74 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         view.endEditing(true)
     }
     
+    func initailizeLikeReciper(){
+        
+        guard let uid = Auth.auth().currentUser?.uid else{ return }
+        
+        //해당 Entity값 모두 삭제하기
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Like")
+        do{
+            let result = try context.fetch(fetchRequest)
+            
+            //모든데이터 삭제
+            result.forEach{ item in
+                context.delete(item)
+            }
+            
+            //영구저장소에 반영
+            if context.hasChanges{
+                do{
+                    try context.save()
+                    print("Deleted Data Saved")
+                } catch{
+                    print(error)
+                }
+            }
+
+            //좋아요한 레시피 목록 가져오기
+            let urlString = "http://inndiary.xyz/api/v1/favorites/give/user?uid=\(uid)"
+            let url = URL(string:urlString)
+            
+            URLSession.shared.dataTask(with:url!){ (data, result, error) in
+                
+                guard let data = data else {return}
+                if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]{
+                    
+                    let favoriteRecipes = json["favoriteRecipes"] as! [Any]
+                    
+                    //서버에서 받은 모든 seq리스트를 로컬저장소에 저장
+                    favoriteRecipes.forEach{ item in
+                        guard let object = item as? [String:Any] else {return}
+                        
+                        //리턴값이 Int이므로 Int->String 형변환
+                        let seq = String(object["recipe_seq"] as! Int)
+                        NSEntityDescription.insertNewObject(forEntityName: "Like", into: self.context).setValue(seq, forKey: "recipe_seq")
+                    }
+                    //context변경사항을 영구저장소에 저장
+                    if self.context.hasChanges{
+                        
+                        do{
+                            try self.context.save()
+                            print("Added Data Saved")
+                        } catch{
+                            print(error)
+                        }
+                    }
+                    
+                }
+            }.resume()
+        }
+        catch{
+            print(error)
+        }
+    }
+ 
+    func getLikeRecipes(){
+        
+        
+        
+        
+    }
 }
 
 extension Bundle {

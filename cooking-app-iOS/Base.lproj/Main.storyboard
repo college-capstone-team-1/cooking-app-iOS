@@ -189,6 +189,18 @@
                                                 <action selector="favoriteEntityController:" destination="kjn-iC-nJy" eventType="touchUpInside" id="4HX-J7-5mY"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqP-C1-A9l" userLabel="likeButton">
+                                            <rect key="frame" x="314" y="61" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="dLa-Uc-iR2"/>
+                                                <constraint firstAttribute="height" constant="30" id="vjX-hB-w75"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title=""/>
+                                            <connections>
+                                                <action selector="likeButton:" destination="kjn-iC-nJy" eventType="touchUpInside" id="tkq-ai-Tcb"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ZHR-SO-lJG" firstAttribute="top" secondItem="yE0-sj-jh0" secondAttribute="bottom" constant="15" id="0L9-Q9-Hgp"/>
@@ -200,7 +212,9 @@
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="R0h-VW-pbb" secondAttribute="bottom" constant="10" id="fgw-YY-STP"/>
                                         <constraint firstItem="aZj-FN-qfV" firstAttribute="leading" secondItem="yE0-sj-jh0" secondAttribute="leading" id="gxm-5f-YqC"/>
                                         <constraint firstItem="yE0-sj-jh0" firstAttribute="leading" secondItem="OMh-oc-7qd" secondAttribute="leading" constant="30" id="h51-2e-Htw"/>
+                                        <constraint firstItem="UqP-C1-A9l" firstAttribute="top" secondItem="ZHR-SO-lJG" secondAttribute="top" id="jGc-sf-FO1"/>
                                         <constraint firstAttribute="trailing" secondItem="yE0-sj-jh0" secondAttribute="trailing" constant="30" id="mNT-cI-KeG"/>
+                                        <constraint firstItem="ZHR-SO-lJG" firstAttribute="leading" secondItem="UqP-C1-A9l" secondAttribute="trailing" constant="10" id="qw5-DO-Zu6"/>
                                         <constraint firstItem="R0h-VW-pbb" firstAttribute="leading" secondItem="yE0-sj-jh0" secondAttribute="leading" id="sDW-31-DDO"/>
                                         <constraint firstItem="yE0-sj-jh0" firstAttribute="trailing" secondItem="ZHR-SO-lJG" secondAttribute="trailing" id="tJe-nC-HMG"/>
                                         <constraint firstItem="aZj-FN-qfV" firstAttribute="top" secondItem="T3S-lN-8Uk" secondAttribute="bottom" constant="30" id="taF-jL-Z66"/>
@@ -262,13 +276,14 @@
                         <outlet property="header" destination="OMh-oc-7qd" id="VLT-Xu-gE7"/>
                         <outlet property="lbDtls" destination="R0h-VW-pbb" id="Aul-8M-uc0"/>
                         <outlet property="lbName" destination="yE0-sj-jh0" id="eKc-hq-Gr4"/>
+                        <outlet property="likeButton" destination="UqP-C1-A9l" id="3gI-db-mrP"/>
                         <outlet property="mainImg" destination="T3S-lN-8Uk" id="GMz-ds-rpa"/>
                         <outlet property="table" destination="Aki-kD-ogC" id="xQe-9h-FGM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8R-Jr-rA2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1368" y="1548"/>
+            <point key="canvasLocation" x="1366.6666666666667" y="1547.5446428571429"/>
         </scene>
         <!--Favorite List-->
         <scene sceneID="NfS-XV-wBK">
@@ -530,10 +545,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xvG-2Y-psU"/>
+        <segue reference="6RV-uC-1le"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="tray.and.arrow.down" catalog="system" width="128" height="109"/>
         <image name="tray.and.arrow.down.fill" catalog="system" width="128" height="114"/>
