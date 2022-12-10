@@ -18,6 +18,8 @@
 		9A2367C428ED3C1D00D43F9D /* EcoRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367C328ED3C1D00D43F9D /* EcoRecipeTests.swift */; };
 		9A2367CE28ED3C1D00D43F9D /* EcoRecipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367CD28ED3C1D00D43F9D /* EcoRecipeUITests.swift */; };
 		9A2367D028ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2367CF28ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift */; };
+		9A259F512944444B00527E96 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A259F502944444B00527E96 /* HomeViewController.swift */; };
+		9A259F532944487F00527E96 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A259F522944487F00527E96 /* HomeCollectionViewCell.swift */; };
 		9A4037E22903D7B900C2C090 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4037E12903D7B900C2C090 /* DetailViewController.swift */; };
 		9A4037E42904078600C2C090 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4037E32904078600C2C090 /* DetailTableViewCell.swift */; };
 		9A41E4602919F4F200C8CA07 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A41E45F2919F4F100C8CA07 /* Login.storyboard */; };
@@ -70,6 +72,8 @@
 		9A2367C928ED3C1D00D43F9D /* cooking-app-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cooking-app-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2367CD28ED3C1D00D43F9D /* EcoRecipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoRecipeUITests.swift; sourceTree = "<group>"; };
 		9A2367CF28ED3C1D00D43F9D /* EcoRecipeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoRecipeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9A259F502944444B00527E96 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9A259F522944487F00527E96 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A4037E12903D7B900C2C090 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9A4037E32904078600C2C090 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		9A41E45F2919F4F100C8CA07 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				9AC986A128F3E4C5009A8E54 /* MainTableViewCell.swift */,
 				9A2367B228ED3C1C00D43F9D /* Main.storyboard */,
 				9A41E45F2919F4F100C8CA07 /* Login.storyboard */,
+				9A259F502944444B00527E96 /* HomeViewController.swift */,
+				9A259F522944487F00527E96 /* HomeCollectionViewCell.swift */,
 				9A0DDE4F292362C6001974FB /* LoginMainViewController.swift */,
 				9A4037E12903D7B900C2C090 /* DetailViewController.swift */,
 				9A4037E32904078600C2C090 /* DetailTableViewCell.swift */,
@@ -362,6 +368,8 @@
 				9A4037E42904078600C2C090 /* DetailTableViewCell.swift in Sources */,
 				9A0DDE50292362C6001974FB /* LoginMainViewController.swift in Sources */,
 				9ABE2ABD29137C1800228F59 /* TabBarController.swift in Sources */,
+				9A259F532944487F00527E96 /* HomeCollectionViewCell.swift in Sources */,
+				9A259F512944444B00527E96 /* HomeViewController.swift in Sources */,
 				9A58E481290C01C6006B0118 /* Model.xcdatamodeld in Sources */,
 				9AB65B00290FA8F1007DFACA /* FavoriteTableViewCell.swift in Sources */,
 				9A4037E22903D7B900C2C090 /* DetailViewController.swift in Sources */,

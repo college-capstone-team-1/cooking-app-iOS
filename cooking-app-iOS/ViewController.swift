@@ -170,8 +170,7 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
                         cell.mainImg?.image = UIImage(data:imgData)
                     }
                 }
-            }
-                
+            }   
         }
         
         return cell
