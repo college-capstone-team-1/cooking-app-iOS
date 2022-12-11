@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,8 +14,33 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7F-Ec-gPl">
+                                <rect key="frame" x="114.5" y="278" width="185" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신만을 위한 레시피공간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sut-P4-fXh">
+                                <rect key="frame" x="82.5" y="353" width="249" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_cook" translatesAutoresizingMaskIntoConstraints="NO" id="yzM-hS-1vP">
+                                <rect key="frame" x="76" y="408" width="262" height="160"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.77254901960784317" green="0.81176470588235294" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yzM-hS-1vP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2bF-qV-hRe"/>
+                            <constraint firstItem="Sut-P4-fXh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4Ef-aE-Lpp"/>
+                            <constraint firstItem="Sut-P4-fXh" firstAttribute="top" secondItem="R7F-Ec-gPl" secondAttribute="bottom" constant="15" id="HzD-xW-7Td"/>
+                            <constraint firstItem="yzM-hS-1vP" firstAttribute="top" secondItem="Sut-P4-fXh" secondAttribute="bottom" constant="25" id="KRS-CK-P92"/>
+                            <constraint firstItem="yzM-hS-1vP" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="40" id="k7P-vp-JYX"/>
+                            <constraint firstItem="R7F-Ec-gPl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="pAg-iz-4V1"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,8 +49,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="img_cook" width="262" height="160"/>
     </resources>
 </document>
